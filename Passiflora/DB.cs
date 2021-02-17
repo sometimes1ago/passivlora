@@ -74,6 +74,30 @@ namespace Passiflora
                 case "Стоимости":
                     sortBy = "Стоимость";
                     break;
+                case "Номеру":
+                    sortBy = "Номер_заказа";
+                    break;
+                case "Дате":
+                    sortBy = "Дата_заказа";
+                    break;
+                case "Статусу":
+                    sortBy = "Статус_заказа";
+                    break;
+                case "Фамилии_клиента":
+                    sortBy = "Фамилия_клиента";
+                    break;
+                case "Адресу_доставки":
+                    sortBy = "Адрес_доставки";
+                    break;
+                case "Сумме_заказа":
+                    sortBy = "Сумма_заказа";
+                    break;
+                case "Коду_выдачи":
+                    sortBy = "Код_выдачи";
+                    break;
+                case "Телефону":
+                    sortBy = "Телефон_клиента";
+                    break;
             }
 
             return sortBy;

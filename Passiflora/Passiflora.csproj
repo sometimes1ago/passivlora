@@ -64,6 +64,12 @@
     <Compile Include="Bouquets.Designer.cs">
       <DependentUpon>Bouquets.cs</DependentUpon>
     </Compile>
+    <Compile Include="Cabinet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cabinet.Designer.cs">
+      <DependentUpon>Cabinet.cs</DependentUpon>
+    </Compile>
     <Compile Include="Cashier.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,6 +144,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Bouquets.resx">
       <DependentUpon>Bouquets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cabinet.resx">
+      <DependentUpon>Cabinet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cashier.resx">
+      <DependentUpon>Cashier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DataRecover.resx">
       <DependentUpon>DataRecover.cs</DependentUpon>

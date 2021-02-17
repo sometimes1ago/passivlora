@@ -46,13 +46,13 @@
             this.OrderByLabel = new System.Windows.Forms.Label();
             this.SortOptions = new System.Windows.Forms.ComboBox();
             this.SortByLabel = new System.Windows.Forms.Label();
-            this.BqData = new System.Windows.Forms.DataGridView();
+            this.FlData = new System.Windows.Forms.DataGridView();
             this.BackArrowImage = new System.Windows.Forms.PictureBox();
             this.BackLink = new System.Windows.Forms.LinkLabel();
             this.SectionHeader = new System.Windows.Forms.Label();
             this.OrderGroup.SuspendLayout();
             this.SortGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BqData)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FlData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BackArrowImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,6 +69,7 @@
             this.OrderButton.TabIndex = 28;
             this.OrderButton.Text = "Заказать";
             this.OrderButton.UseVisualStyleBackColor = false;
+            this.OrderButton.Click += new System.EventHandler(this.OrderButton_Click);
             // 
             // OrderGroup
             // 
@@ -122,9 +123,9 @@
             this.SelectProdLabel.AutoSize = true;
             this.SelectProdLabel.Location = new System.Drawing.Point(7, 27);
             this.SelectProdLabel.Name = "SelectProdLabel";
-            this.SelectProdLabel.Size = new System.Drawing.Size(92, 13);
+            this.SelectProdLabel.Size = new System.Drawing.Size(100, 13);
             this.SelectProdLabel.TabIndex = 0;
-            this.SelectProdLabel.Text = "Выберите букет";
+            this.SelectProdLabel.Text = "Выберите цветок";
             // 
             // SortButton
             // 
@@ -240,13 +241,13 @@
             this.SortByLabel.TabIndex = 0;
             this.SortByLabel.Text = "Сортировать по:";
             // 
-            // BqData
+            // FlData
             // 
-            this.BqData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.BqData.Location = new System.Drawing.Point(23, 86);
-            this.BqData.Name = "BqData";
-            this.BqData.Size = new System.Drawing.Size(642, 246);
-            this.BqData.TabIndex = 24;
+            this.FlData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.FlData.Location = new System.Drawing.Point(23, 86);
+            this.FlData.Name = "FlData";
+            this.FlData.Size = new System.Drawing.Size(642, 246);
+            this.FlData.TabIndex = 24;
             // 
             // BackArrowImage
             // 
@@ -295,7 +296,7 @@
             this.Controls.Add(this.OrderGroup);
             this.Controls.Add(this.SortButton);
             this.Controls.Add(this.SortGroupBox);
-            this.Controls.Add(this.BqData);
+            this.Controls.Add(this.FlData);
             this.Controls.Add(this.BackArrowImage);
             this.Controls.Add(this.BackLink);
             this.Controls.Add(this.SectionHeader);
@@ -311,7 +312,7 @@
             this.OrderGroup.PerformLayout();
             this.SortGroupBox.ResumeLayout(false);
             this.SortGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BqData)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FlData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BackArrowImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -337,7 +338,7 @@
         private System.Windows.Forms.Label OrderByLabel;
         private System.Windows.Forms.ComboBox SortOptions;
         private System.Windows.Forms.Label SortByLabel;
-        private System.Windows.Forms.DataGridView BqData;
+        private System.Windows.Forms.DataGridView FlData;
         private System.Windows.Forms.PictureBox BackArrowImage;
         private System.Windows.Forms.LinkLabel BackLink;
         private System.Windows.Forms.Label SectionHeader;

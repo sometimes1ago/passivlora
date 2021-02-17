@@ -43,6 +43,7 @@
             this.LoginIcon = new System.Windows.Forms.PictureBox();
             this.Logo = new System.Windows.Forms.PictureBox();
             this.LogoutLink = new System.Windows.Forms.LinkLabel();
+            this.CabinetLink = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LoginIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
@@ -174,7 +175,7 @@
             this.AuthLink.AutoSize = true;
             this.AuthLink.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.AuthLink.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(91)))), ((int)(((byte)(66)))));
-            this.AuthLink.Location = new System.Drawing.Point(385, 31);
+            this.AuthLink.Location = new System.Drawing.Point(314, 29);
             this.AuthLink.Name = "AuthLink";
             this.AuthLink.Size = new System.Drawing.Size(120, 20);
             this.AuthLink.TabIndex = 13;
@@ -194,7 +195,7 @@
             // LoginIcon
             // 
             this.LoginIcon.Image = global::Passiflora.Properties.Resources.login;
-            this.LoginIcon.Location = new System.Drawing.Point(351, 24);
+            this.LoginIcon.Location = new System.Drawing.Point(280, 24);
             this.LoginIcon.Name = "LoginIcon";
             this.LoginIcon.Size = new System.Drawing.Size(28, 27);
             this.LoginIcon.TabIndex = 11;
@@ -225,6 +226,22 @@
             this.LogoutLink.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.LogoutLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LogoutLink_LinkClicked);
             // 
+            // CabinetLink
+            // 
+            this.CabinetLink.AutoSize = true;
+            this.CabinetLink.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CabinetLink.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.CabinetLink.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.CabinetLink.Location = new System.Drawing.Point(771, 29);
+            this.CabinetLink.Name = "CabinetLink";
+            this.CabinetLink.Size = new System.Drawing.Size(115, 17);
+            this.CabinetLink.TabIndex = 17;
+            this.CabinetLink.TabStop = true;
+            this.CabinetLink.Text = "Личный кабинет";
+            this.CabinetLink.UseMnemonic = false;
+            this.CabinetLink.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.CabinetLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.CabinetLink_LinkClicked);
+            // 
             // Products
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -232,6 +249,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(984, 561);
+            this.Controls.Add(this.CabinetLink);
             this.Controls.Add(this.LogoutLink);
             this.Controls.Add(this.AuthLink);
             this.Controls.Add(this.pictureBox1);
@@ -278,5 +296,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label AuthLink;
         private System.Windows.Forms.LinkLabel LogoutLink;
+        private System.Windows.Forms.LinkLabel CabinetLink;
     }
 }

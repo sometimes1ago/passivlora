@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PlantCare));
             this.OrderButton = new System.Windows.Forms.Button();
             this.OrderGroup = new System.Windows.Forms.GroupBox();
+            this.Count = new System.Windows.Forms.MaskedTextBox();
             this.AuthRequiredLabel = new System.Windows.Forms.Label();
-            this.Count = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.ProdNames = new System.Windows.Forms.ComboBox();
             this.SelectProdLabel = new System.Windows.Forms.Label();
@@ -46,13 +46,13 @@
             this.OrderByLabel = new System.Windows.Forms.Label();
             this.SortOptions = new System.Windows.Forms.ComboBox();
             this.SortByLabel = new System.Windows.Forms.Label();
-            this.BqData = new System.Windows.Forms.DataGridView();
+            this.PcData = new System.Windows.Forms.DataGridView();
             this.BackArrowImage = new System.Windows.Forms.PictureBox();
             this.BackLink = new System.Windows.Forms.LinkLabel();
             this.SectionHeader = new System.Windows.Forms.Label();
             this.OrderGroup.SuspendLayout();
             this.SortGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BqData)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PcData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BackArrowImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,11 +69,12 @@
             this.OrderButton.TabIndex = 52;
             this.OrderButton.Text = "Заказать";
             this.OrderButton.UseVisualStyleBackColor = false;
+            this.OrderButton.Click += new System.EventHandler(this.OrderButton_Click);
             // 
             // OrderGroup
             // 
-            this.OrderGroup.Controls.Add(this.AuthRequiredLabel);
             this.OrderGroup.Controls.Add(this.Count);
+            this.OrderGroup.Controls.Add(this.AuthRequiredLabel);
             this.OrderGroup.Controls.Add(this.label1);
             this.OrderGroup.Controls.Add(this.ProdNames);
             this.OrderGroup.Controls.Add(this.SelectProdLabel);
@@ -85,6 +86,16 @@
             this.OrderGroup.TabStop = false;
             this.OrderGroup.Text = "Заказать";
             // 
+            // Count
+            // 
+            this.Count.Location = new System.Drawing.Point(134, 57);
+            this.Count.Mask = "00000";
+            this.Count.Name = "Count";
+            this.Count.PromptChar = ' ';
+            this.Count.Size = new System.Drawing.Size(57, 22);
+            this.Count.TabIndex = 22;
+            this.Count.ValidatingType = typeof(int);
+            // 
             // AuthRequiredLabel
             // 
             this.AuthRequiredLabel.Location = new System.Drawing.Point(7, 88);
@@ -92,13 +103,6 @@
             this.AuthRequiredLabel.Size = new System.Drawing.Size(205, 28);
             this.AuthRequiredLabel.TabIndex = 21;
             this.AuthRequiredLabel.Text = "Для оформления заказа необходимо авторизоваться";
-            // 
-            // Count
-            // 
-            this.Count.Location = new System.Drawing.Point(134, 56);
-            this.Count.Name = "Count";
-            this.Count.Size = new System.Drawing.Size(68, 22);
-            this.Count.TabIndex = 3;
             // 
             // label1
             // 
@@ -122,9 +126,9 @@
             this.SelectProdLabel.AutoSize = true;
             this.SelectProdLabel.Location = new System.Drawing.Point(7, 27);
             this.SelectProdLabel.Name = "SelectProdLabel";
-            this.SelectProdLabel.Size = new System.Drawing.Size(92, 13);
+            this.SelectProdLabel.Size = new System.Drawing.Size(94, 13);
             this.SelectProdLabel.TabIndex = 0;
-            this.SelectProdLabel.Text = "Выберите букет";
+            this.SelectProdLabel.Text = "Выберите товар";
             // 
             // SortButton
             // 
@@ -240,13 +244,13 @@
             this.SortByLabel.TabIndex = 0;
             this.SortByLabel.Text = "Сортировать по:";
             // 
-            // BqData
+            // PcData
             // 
-            this.BqData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.BqData.Location = new System.Drawing.Point(21, 95);
-            this.BqData.Name = "BqData";
-            this.BqData.Size = new System.Drawing.Size(642, 246);
-            this.BqData.TabIndex = 48;
+            this.PcData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.PcData.Location = new System.Drawing.Point(21, 95);
+            this.PcData.Name = "PcData";
+            this.PcData.Size = new System.Drawing.Size(642, 246);
+            this.PcData.TabIndex = 48;
             // 
             // BackArrowImage
             // 
@@ -295,7 +299,7 @@
             this.Controls.Add(this.OrderGroup);
             this.Controls.Add(this.SortButton);
             this.Controls.Add(this.SortGroupBox);
-            this.Controls.Add(this.BqData);
+            this.Controls.Add(this.PcData);
             this.Controls.Add(this.BackArrowImage);
             this.Controls.Add(this.BackLink);
             this.Controls.Add(this.SectionHeader);
@@ -311,7 +315,7 @@
             this.OrderGroup.PerformLayout();
             this.SortGroupBox.ResumeLayout(false);
             this.SortGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BqData)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PcData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BackArrowImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -323,7 +327,6 @@
         private System.Windows.Forms.Button OrderButton;
         private System.Windows.Forms.GroupBox OrderGroup;
         private System.Windows.Forms.Label AuthRequiredLabel;
-        private System.Windows.Forms.TextBox Count;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox ProdNames;
         private System.Windows.Forms.Label SelectProdLabel;
@@ -337,9 +340,10 @@
         private System.Windows.Forms.Label OrderByLabel;
         private System.Windows.Forms.ComboBox SortOptions;
         private System.Windows.Forms.Label SortByLabel;
-        private System.Windows.Forms.DataGridView BqData;
+        private System.Windows.Forms.DataGridView PcData;
         private System.Windows.Forms.PictureBox BackArrowImage;
         private System.Windows.Forms.LinkLabel BackLink;
         private System.Windows.Forms.Label SectionHeader;
+        private System.Windows.Forms.MaskedTextBox Count;
     }
 }

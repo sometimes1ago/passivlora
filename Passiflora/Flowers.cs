@@ -23,7 +23,7 @@ namespace Passiflora
             string OrderOpt = DB.GetOrderBy(OrderOptions.SelectedItem.ToString());
             int PriceFrom = Convert.ToInt32(RangeFrom.Text);
             int PriceTo = Convert.ToInt32(RangeTo.Text);
-            BqData.DataSource = DB.GetAllProds("Цветы", SortOpt, OrderOpt, PriceFrom, PriceTo);
+            FlData.DataSource = DB.GetAllProds("Цветы", SortOpt, OrderOpt, PriceFrom, PriceTo);
         }
 
         private void Flowers_Load(object sender, EventArgs e)
@@ -38,7 +38,7 @@ namespace Passiflora
             int PriceFrom = Convert.ToInt32(RangeFrom.Text);
             int PriceTo = Convert.ToInt32(RangeTo.Text);
 
-            BqData.DataSource = DB.GetAllProds("Цветы", SortOpt, OrderOpt, PriceFrom, PriceTo);
+            FlData.DataSource = DB.GetAllProds("Цветы", SortOpt, OrderOpt, PriceFrom, PriceTo);
 
             if (DB.AuthorizedUser == null)
             {
@@ -69,6 +69,29 @@ namespace Passiflora
         private void Flowers_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void OrderButton_Click(object sender, EventArgs e)
+        {
+            Order ord = new Order();
+
+            try
+            {
+                if (ProdNames.SelectedItem != null && !Count.Text.Equals(""))
+                {
+                    ord.SetSelectedProduct(ProdNames.SelectedItem.ToString());
+                    ord.SetSelectedProdCount(Convert.ToInt32(Count.Text));
+                    ord.Show();
+                }
+                else
+                {
+                    throw new Exception("Вы должны выбрать товар для заказа и указать количество не меньше 1!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

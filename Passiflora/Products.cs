@@ -42,6 +42,7 @@ namespace Passiflora
                 AuthLink.Text = "Авторизация";
                 LoginIcon.Visible = Visible;
                 LogoutLink.Visible = false;
+                CabinetLink.Visible = false;
             }
             else
             {
@@ -50,6 +51,7 @@ namespace Passiflora
                 AuthLink.Margin = new Padding(0, 0, 0, 100);
                 AuthLink.Text = "Здравствуйте, " + DB.ds.Tables[0].Rows[0][0].ToString() + " " + DB.ds.Tables[0].Rows[0][1].ToString();
                 LogoutLink.Visible = true;
+                CabinetLink.Visible = true;
             }
         }
 
@@ -111,6 +113,13 @@ namespace Passiflora
             PlantCare pc = new PlantCare();
             Hide();
             pc.Show();
+        }
+
+        private void CabinetLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Cabinet cb = new Cabinet(this);
+            Hide();
+            cb.Show();
         }
     }
 }

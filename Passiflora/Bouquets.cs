@@ -32,6 +32,7 @@ namespace Passiflora
             OrderOptions.SelectedItem = "Возрастанию";
             RangeFrom.Text = "0";
             RangeTo.Text = "5000";
+
             string SortOpt = DB.GetSortMode(SortOptions.SelectedItem.ToString());
             string OrderOpt = DB.GetOrderBy(OrderOptions.SelectedItem.ToString());
             int PriceFrom = Convert.ToInt32(RangeFrom.Text);
