@@ -98,6 +98,9 @@ namespace Passiflora
                 case "Телефону":
                     sortBy = "Телефон_клиента";
                     break;
+                case "Фамилии":
+                    sortBy = "Фамилия";
+                    break;
             }
 
             return sortBy;

@@ -94,3 +94,4 @@ C:\Users\Александр\source\repos\passivlora\Passiflora\obj\Debug\Passifl
 C:\Users\Александр\source\repos\passivlora\Passiflora\obj\Debug\Passiflora.pdb
 C:\Users\Александр\source\repos\passivlora\Passiflora\obj\Debug\Passiflora.Cabinet.resources
 C:\Users\Александр\source\repos\passivlora\Passiflora\obj\Debug\Passiflora.Cashier.resources
+C:\Users\Александр\source\repos\passivlora\Passiflora\obj\Debug\Passiflora.Administrator.resources

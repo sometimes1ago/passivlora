@@ -41,17 +41,17 @@
             this.SortByLabel = new System.Windows.Forms.Label();
             this.LogoutLink = new System.Windows.Forms.LinkLabel();
             this.DirectSearch = new System.Windows.Forms.GroupBox();
+            this.SearchValueInput = new System.Windows.Forms.TextBox();
             this.EnterValueLabel = new System.Windows.Forms.Label();
             this.SearchOpt = new System.Windows.Forms.ComboBox();
             this.SearchByLabel = new System.Windows.Forms.Label();
-            this.SearchValueInput = new System.Windows.Forms.TextBox();
             this.SearchButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.OrderNumberInput = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.OrderStatusOptions = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.ChangeStatusButton = new System.Windows.Forms.Button();
-            this.OrderNumberInput = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.OrdersData)).BeginInit();
             this.SortGroupBox.SuspendLayout();
             this.DirectSearch.SuspendLayout();
@@ -62,7 +62,7 @@
             // 
             this.ScreenHeader.Font = new System.Drawing.Font("Times New Roman", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ScreenHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(91)))), ((int)(((byte)(66)))));
-            this.ScreenHeader.Location = new System.Drawing.Point(9, 45);
+            this.ScreenHeader.Location = new System.Drawing.Point(13, 25);
             this.ScreenHeader.Name = "ScreenHeader";
             this.ScreenHeader.Size = new System.Drawing.Size(541, 50);
             this.ScreenHeader.TabIndex = 1;
@@ -73,7 +73,7 @@
             this.GreetingLabel.AutoSize = true;
             this.GreetingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.GreetingLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(91)))), ((int)(((byte)(66)))));
-            this.GreetingLabel.Location = new System.Drawing.Point(14, 109);
+            this.GreetingLabel.Location = new System.Drawing.Point(18, 89);
             this.GreetingLabel.Name = "GreetingLabel";
             this.GreetingLabel.Size = new System.Drawing.Size(140, 20);
             this.GreetingLabel.TabIndex = 14;
@@ -200,6 +200,13 @@
             this.DirectSearch.TabStop = false;
             this.DirectSearch.Text = "Прямой поиск";
             // 
+            // SearchValueInput
+            // 
+            this.SearchValueInput.Location = new System.Drawing.Point(141, 58);
+            this.SearchValueInput.Name = "SearchValueInput";
+            this.SearchValueInput.Size = new System.Drawing.Size(121, 22);
+            this.SearchValueInput.TabIndex = 3;
+            // 
             // EnterValueLabel
             // 
             this.EnterValueLabel.AutoSize = true;
@@ -235,13 +242,6 @@
             this.SearchByLabel.TabIndex = 0;
             this.SearchByLabel.Text = "Искать по:";
             // 
-            // SearchValueInput
-            // 
-            this.SearchValueInput.Location = new System.Drawing.Point(141, 58);
-            this.SearchValueInput.Name = "SearchValueInput";
-            this.SearchValueInput.Size = new System.Drawing.Size(121, 22);
-            this.SearchValueInput.TabIndex = 3;
-            // 
             // SearchButton
             // 
             this.SearchButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(91)))), ((int)(((byte)(66)))));
@@ -270,6 +270,16 @@
             this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Изменить статус заказа";
+            // 
+            // OrderNumberInput
+            // 
+            this.OrderNumberInput.Location = new System.Drawing.Point(112, 25);
+            this.OrderNumberInput.Mask = "00000";
+            this.OrderNumberInput.Name = "OrderNumberInput";
+            this.OrderNumberInput.PromptChar = ' ';
+            this.OrderNumberInput.Size = new System.Drawing.Size(121, 22);
+            this.OrderNumberInput.TabIndex = 3;
+            this.OrderNumberInput.ValidatingType = typeof(int);
             // 
             // label2
             // 
@@ -314,16 +324,6 @@
             this.ChangeStatusButton.Text = "Изменить";
             this.ChangeStatusButton.UseVisualStyleBackColor = false;
             this.ChangeStatusButton.Click += new System.EventHandler(this.ChangeStatusButton_Click);
-            // 
-            // OrderNumberInput
-            // 
-            this.OrderNumberInput.Location = new System.Drawing.Point(112, 25);
-            this.OrderNumberInput.Mask = "00000";
-            this.OrderNumberInput.Name = "OrderNumberInput";
-            this.OrderNumberInput.PromptChar = ' ';
-            this.OrderNumberInput.Size = new System.Drawing.Size(121, 22);
-            this.OrderNumberInput.TabIndex = 3;
-            this.OrderNumberInput.ValidatingType = typeof(int);
             // 
             // Cashier
             // 
