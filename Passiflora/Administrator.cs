@@ -30,11 +30,34 @@ namespace Passiflora
             string SortOpt = DB.GetSortMode(SortOptions.SelectedItem.ToString());
             string OrderOpt = DB.GetOrderBy(OrderOptions.SelectedItem.ToString());
 
+            //Получение данных всех заказов на странице с заказами
             string GetQuery = "select * from GetAllUsersOrders order by " + SortOpt + " " + OrderOpt;
             OrdersData.DataSource = DB.SearchValuesQuery(GetQuery);
 
+            //Получение всех данных о сотрудниках на странице с сотрудниками
             string GetEmployeesQuery = "select * from GetAllEmployees";
             EmployeesData.DataSource = DB.SearchValuesQuery(GetEmployeesQuery);
+
+            //Получение всех данных о поставках и товарах в поставке на странице с поставками
+            string GetShipmentsQuery = "select * from GetAllShipments";
+            ShipmentData.DataSource = DB.SearchValuesQuery(GetShipmentsQuery);
+
+            //Заполнение поставщиками и товарами списки на странице с поставками
+            string GetSuppliersNames = "select Название_компании from Поставщики";
+            DB.SearchValuesQuery(GetSuppliersNames);
+
+            for (int i = 0; i < DB.ds.Tables[0].Rows.Count; i++)
+            {
+                SuppliersOptions.Items.Add(DB.ds.Tables[0].Rows[i][0].ToString());
+            }
+
+            string GetProductsNames = "select Наименование from Товары";
+            DB.SearchValuesQuery(GetProductsNames);
+
+            for(int i = 0; i < DB.ds.Tables[0].Rows.Count; i++)
+            {
+                SelectProduct.Items.Add(DB.ds.Tables[0].Rows[i][0].ToString());
+            }
 
             DB.SearchValuesQuery("select Имя, Отчество from Сотрудники inner join Пользователи on Сотрудники.Данные_для_входа = Пользователи.ID_Пользователя where Пользователи.Логин =" + "\'" + DB.AuthorizedUser + "\'");
             GreetingLabel.Text = "Здравствуйте, " + DB.ds.Tables[0].Rows[0][0].ToString() + " " + DB.ds.Tables[0].Rows[0][1].ToString();
@@ -245,5 +268,66 @@ namespace Passiflora
             EmployeesData.DataSource = DB.SearchValuesQuery(GetEmployeesQuery);
         }
 
+        private void AddShipmentButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (SuppliersOptions.SelectedItem != null && SelectProduct.SelectedItem != null && DateInput.Text != "" && CountInput.Text != "")
+                {
+                    //Получение ID выбранного поставщика
+                    string GetSupplierID = "select ID_Поставщика from Поставщики where Название_компании = " + "\'" + SuppliersOptions.SelectedItem.ToString() + "\'";
+                    DB.SearchValuesQuery(GetSupplierID);
+                    string SupplierID = DB.ds.Tables[0].Rows[0][0].ToString();
+
+                    //Добавление данных о новой поставке
+                    string AddShipmentQuery = "insert into Поставки(Поставщик, Дата_поставки) values(" + "\'" + SupplierID + "\'" + "," + "\'" + Convert.ToDateTime(DateInput.Text) + "\'" + ")";
+                    DB.Execute(AddShipmentQuery);
+
+                    //Получение ID новой поставки
+                    string GetShpipmentIDQuery = "select max(ID_Поставки) from Поставки";
+                    DB.SearchValuesQuery(GetShpipmentIDQuery);
+                    string ShipmentID = DB.ds.Tables[0].Rows[0][0].ToString();
+
+                    //Получение ID выбранного товара
+                    string GetProdID = "select ID_Товара from Товары where Наименование = " + "\'" + SelectProduct.SelectedItem.ToString() + "\'";
+                    DB.SearchValuesQuery(GetProdID);
+                    string ProdID = DB.ds.Tables[0].Rows[0][0].ToString();
+
+                    if (!DateInput.Text.Contains("-"))
+                    {
+                        throw new Exception("Неправильный формат даты!");
+                    }
+
+                    if (int.TryParse(CountInput.Text, out int Count))
+                    {
+                        //Связка товаров с поставкой
+                        string AddProdsInShipmentQuery = "insert into Товары_в_поставках(Поставка, Товар, Количество) values (" +
+                            "\'" + ShipmentID + "\'" + "," + "\'" + ProdID + "\'" + "," + "\'" + Count + "\'" + ")";
+                        DB.Execute(AddProdsInShipmentQuery);
+
+                        MessageBox.Show("Поставка успешно добавлена. Нажмите Обновить данные для обновления информации");
+                    }
+                    else
+                    {
+                        throw new Exception("Количество товара может быть только целым числом!");
+                    }
+                }
+                else
+                {
+                    throw new Exception("Все поля обязательны для заполнения! Проверьте правильность ввода данных!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void UpdateDataButton_Click(object sender, EventArgs e)
+        {
+            //Получение всех данных о поставках и товарах в поставке на странице с поставками
+            string GetShipmentsQuery = "select * from GetAllShipments";
+            ShipmentData.DataSource = DB.SearchValuesQuery(GetShipmentsQuery);
+        }
     }
 }

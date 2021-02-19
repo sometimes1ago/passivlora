@@ -119,14 +119,19 @@ namespace Passiflora
 
                     //Выборка максимального(последнего добавленного) заказа
                     DB.SearchValuesQuery("select max(ID_Заказа) from Заказы");
-                    int OrderID = Convert.ToInt32(DB.ds.Tables[0].Rows[0][0].ToString());
+                    string OrderID = DB.ds.Tables[0].Rows[0][0].ToString();
 
                     //Получение ID авторизованного пользователя
-                    DB.GetAuthorizedUserID();
-                    int AuthorizedUserID = Convert.ToInt32(DB.ds.Tables[0].Rows[0][0].ToString());
+                    string Query = "select ID_Пользователя from Пользователи where Логин = " + "\'" + DB.AuthorizedUser + "\'";
+                    DB.SearchValuesQuery(Query);
+                    string AuthorizedUserID = DB.ds.Tables[0].Rows[0][0].ToString();
+
+                    string GetClientID = "select ID_Клиента from Клиенты where Данные_для_входа = " + "\'" + AuthorizedUserID + "\'";
+                    DB.SearchValuesQuery(GetClientID);
+                    string ClientID = DB.ds.Tables[0].Rows[0][0].ToString();
 
                     //Запрос и его выполнение на привязку заказа к пользователю, сделавшему заказ
-                    string AddOrderToUser = "insert into Заказы_клиентов(Заказ, Клиент) values(" + "\'" + OrderID + "\'" + "," + "\'" + AuthorizedUserID + "\'" + ")";
+                    string AddOrderToUser = "insert into Заказы_клиентов(Заказ, Клиент) values(" + "\'" + OrderID + "\'" + "," + "\'" + ClientID + "\'" + ")";
                     DB.Execute(AddOrderToUser);
 
                     MessageBox.Show($@"Вы успешно сделали заказ! Ваш код выдачи: {SecretKey}. Все ваши заказы отображаются в личном кабинете");

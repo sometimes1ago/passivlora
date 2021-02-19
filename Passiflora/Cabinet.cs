@@ -21,6 +21,7 @@ namespace Passiflora
 
         private void Cabinet_Load(object sender, EventArgs e)
         {
+            SectionHeader.Text = DB.AuthorizedUser;
             OrderData.DataSource = DB.SearchValuesQuery("execute GetOrdersByUsername " + "\'" + DB.AuthorizedUser + "\'");
         }
 
