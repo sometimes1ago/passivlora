@@ -19,13 +19,16 @@ namespace Passiflora
             FormToOpen = auth;
         }
 
-        
+        #region Автоматические действия при загрузке формы
 
         private void Administrator_Load(object sender, EventArgs e)
         {
             SortOptions.SelectedItem = "Номеру";
             OrderOptions.SelectedItem = "Возрастанию";
             SearchEmp.SelectedItem = "Фамилии";
+            SuppliersOptions.SelectedItem = "Florist.ru";
+            SelectProduct.SelectedItem = "Букет Весеннее настроение";
+            ProdTypeOptions.SelectedItem = "Цветы";
 
             string SortOpt = DB.GetSortMode(SortOptions.SelectedItem.ToString());
             string OrderOpt = DB.GetOrderBy(OrderOptions.SelectedItem.ToString());
@@ -59,9 +62,30 @@ namespace Passiflora
                 SelectProduct.Items.Add(DB.ds.Tables[0].Rows[i][0].ToString());
             }
 
+            //Получение списка всех товаров
+            string GetAllProds = "select * from GetAllProds";
+            ProductsData.DataSource = DB.SearchValuesQuery(GetAllProds);
+
+            //Заполнение списка типов товаров
+            string GetProdTypes = "select Наименование from Типы_Товаров";
+            DB.SearchValuesQuery(GetProdTypes);
+
+            for (int i = 0; i < DB.ds.Tables[0].Rows.Count; i++)
+            {
+                ProdTypeOptions.Items.Add(DB.ds.Tables[0].Rows[i][0].ToString());
+            }
+
+            ProdTypeOptions.SelectedItem = "Букеты";
+            SearchByProdOptions.SelectedItem = "Имени";
+
+            string GetAllClients = "select * from GetAllClients";
+            ClientsData.DataSource = DB.SearchValuesQuery(GetAllClients);
+
             DB.SearchValuesQuery("select Имя, Отчество from Сотрудники inner join Пользователи on Сотрудники.Данные_для_входа = Пользователи.ID_Пользователя where Пользователи.Логин =" + "\'" + DB.AuthorizedUser + "\'");
             GreetingLabel.Text = "Здравствуйте, " + DB.ds.Tables[0].Rows[0][0].ToString() + " " + DB.ds.Tables[0].Rows[0][1].ToString();
         }
+
+        #endregion
 
         private void Administrator_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -259,8 +283,6 @@ namespace Passiflora
             }
         }
 
-        #endregion
-
         private void UpdateEmpData_Click(object sender, EventArgs e)
         {
             //Обновление данных в таблице
@@ -268,6 +290,9 @@ namespace Passiflora
             EmployeesData.DataSource = DB.SearchValuesQuery(GetEmployeesQuery);
         }
 
+        #endregion
+
+        #region Обработка действий на странице с поставками
         private void AddShipmentButton_Click(object sender, EventArgs e)
         {
             try
@@ -306,6 +331,7 @@ namespace Passiflora
                         DB.Execute(AddProdsInShipmentQuery);
 
                         MessageBox.Show("Поставка успешно добавлена. Нажмите Обновить данные для обновления информации");
+
                     }
                     else
                     {
@@ -323,11 +349,239 @@ namespace Passiflora
             }
         }
 
-        private void UpdateDataButton_Click(object sender, EventArgs e)
+        private void DeleteShimpentButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if ( int.TryParse(ShipmentNumber.Text, out int ShipNum))
+                {
+                    //Удаление записи из таблицы Товары в поставках по номеру поставки
+                    string DeleteFromProdsInShip = "delete from Товары_в_поставках where Поставка = " + "\'" + ShipNum + "\'";
+                    DB.Execute(DeleteFromProdsInShip);
+
+                    //Удаление записи из поставок по номеру поставки
+                    string DeleteFromShipments = "delete from Поставки where ID_Поставки = " + "\'" + ShipNum + "\'";
+                    DB.Execute(DeleteFromShipments);
+
+                    MessageBox.Show($@"Поставка под номером {ShipNum} успешно удалена");
+                    ShipmentNumber.Text = "";
+                }
+                else
+                {
+                    throw new Exception("Номер поставки может быть только целочисленным значением!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void UpdateShipmentsDataButton_Click(object sender, EventArgs e)
         {
             //Получение всех данных о поставках и товарах в поставке на странице с поставками
             string GetShipmentsQuery = "select * from GetAllShipments";
             ShipmentData.DataSource = DB.SearchValuesQuery(GetShipmentsQuery);
+        }
+
+        #endregion
+
+        #region Обработка действий на странице с товарами
+
+        private string GetSelectedProdTypeID(string SelectedProd)
+        {
+            switch (SelectedProd)
+            {
+                case "Букеты":
+                    SelectedProd = "1";
+                    break;
+                case "Цветы":
+                    SelectedProd = "2";
+                    break;
+                case "Горшки":
+                    SelectedProd = "3";
+                    break;
+                case "Комнатные растения":
+                    SelectedProd = "4";
+                    break;
+                case "Садовые растения":
+                    SelectedProd = "5";
+                    break;
+                case "Уход за растениями":
+                    SelectedProd = "6";
+                    break;
+            }
+
+            return SelectedProd;
+        }
+
+        private void AddProdButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string SwitchedProdType = GetSelectedProdTypeID(ProdTypeOptions.SelectedItem.ToString());
+
+                if (ProdNameInput.Text != "" && LengthInput.Text != "" &&
+                    WidthInput.Text != "" && HeightInput.Text != "" && PriceInput.Text != "")
+                {
+                    if (int.TryParse(LengthInput.Text, out int Length) && int.TryParse(WidthInput.Text, out int Width)
+                    && int.TryParse(HeightInput.Text, out int Height) && int.TryParse(PriceInput.Text, out int Price))
+                    {
+                        string AddNewProd = "insert into Товары(Наименование, Тип_Товара, Длина_см, Ширина_см, Высота_см, Стоимость) values (" +
+                           "\'" + ProdNameInput.Text + "\'" + "," + "\'" + SwitchedProdType + "\'" + "," + "\'" + Length + "\'" + "," + "\'" +
+                           Width + "\'" + "," + "\'" + Height + "\'" + "," + "\'" + Price + "\')";
+                        DB.Execute(AddNewProd);
+
+                        MessageBox.Show("Новый товар успешно добавлен!");
+                    }
+                    else
+                    {
+                        throw new Exception("Длина, ширина, высота и цена может быть только целочисленным значением!");
+                    }
+                }
+                else
+                {
+                    throw new Exception("Все поля обязательны для заполнения! Проверьте правильность вводимых данных!");
+                }
+            } 
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void UpdateProdDataButton_Click(object sender, EventArgs e)
+        {
+            //Получение списка всех товаров
+            string GetAllProds = "select * from GetAllProds";
+            ProductsData.DataSource = DB.SearchValuesQuery(GetAllProds);
+        }
+
+        private void DeleteProdButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (int.TryParse(DeleteProdInput.Text, out int DeleteProdNumber))
+                {
+                    string DeleteProdQuery = "delete from Товары where ID_Товара = " + "\'" + DeleteProdNumber + "\'";
+                    DB.Execute(DeleteProdQuery);
+                    MessageBox.Show($@"Товар с номером {DeleteProdNumber} успешно удален");
+                }
+                else
+                {
+                    throw new Exception("Номер товара может быть только целочисленным значением");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void SearchByButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (SearchByProdValue.Text != "")
+                {
+                    switch (SearchByProdOptions.SelectedItem)
+                    {
+                        case "Имени":
+                            ProductsData.DataSource = DB.SearchValuesQuery("select * from GetAllProds where Наименование = " + "\'" + SearchByProdValue.Text + "\'");
+                            break;
+                        case "Длине":
+                            ProductsData.DataSource = DB.SearchValuesQuery("select * from GetAllProds where Длина_см = " + "\'" + SearchByProdValue.Text + "\'");
+                            break;
+                        case "Ширине":
+                            ProductsData.DataSource = DB.SearchValuesQuery("select * from GetAllProds where Ширина_см = " + "\'" + SearchByProdValue.Text + "\'");
+                            break;
+                        case "Высоте":
+                            ProductsData.DataSource = DB.SearchValuesQuery("select * from GetAllProds where Высота_см = " + "\'" + SearchByProdValue.Text + "\'");
+                            break;
+                        case "Стоимости":
+                            ProductsData.DataSource = DB.SearchValuesQuery("select * from GetAllProds where Стоимость = " + "\'" + SearchByProdValue.Text + "\'");
+                            break;
+                    }
+                }
+                else
+                {
+                    throw new Exception("Введите значение для поиска!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+
+        #endregion
+
+        private string SwitchClietnsSearchBy(string SearchBy)
+        {
+            switch (SearchBy)
+            {
+                case "Фамилии":
+                    SearchBy = "Фамилия";
+                    break;
+                case "Телефону":
+                    SearchBy = "Телефон";
+                    break;
+                case "Логину":
+                    SearchBy = "Логин";
+                    break;
+                case "Секретному ключу":
+                    SearchBy = "Секретный_ключ";
+                    break;
+            }
+
+            return SearchBy;
+        }
+
+        private void SearchClientButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string SearchBy = SwitchClietnsSearchBy(SearchClientByOptions.SelectedItem.ToString());
+                string SearchClientsBy = "select * from GetAllClients where " + SearchBy + " = " + "\'" + SearchClientValueInput.Text + "\'";
+                ClientsData.DataSource = DB.SearchValuesQuery(SearchClientsBy);
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void DeleteClientButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (RemovableClientLogin.Text != "")
+                {
+                    //Получение ID пользователя с введенным логином
+                    string GetUserID = "select ID_Пользователя from Пользователи where Логин = " + "\'" + RemovableClientLogin.Text + "\'";
+                    DB.SearchValuesQuery(GetUserID);
+                    string UserID = DB.ds.Tables[0].Rows[0][0].ToString();
+
+                    //Удаление клиента
+                    string DeleteClient = "delete from Клиенты where Данные_для_входа = " + "\'" + UserID + "\'";
+                    DB.Execute(DeleteClient);
+
+                    //Удаление данных для авторизации
+                    string DeleteAuthClientData = "delete from Пользователи where ID_Пользователя = " + "\'" + UserID + "\'";
+                    DB.Execute(DeleteAuthClientData);
+                }
+                else
+                {
+                    throw new Exception("Для удаление необходимо ввести логин пользователя!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

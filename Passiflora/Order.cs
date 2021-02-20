@@ -83,6 +83,7 @@ namespace Passiflora
             ByCourier.Checked = true;
         }
 
+        #region Обработка события создания нового заказа и привязка авторизованному клиенту
         private void OrderButton_Click(object sender, EventArgs e)
         { 
             //Адрес покупателя. Если доставка самовывозом, устанавливается адрес магазина
@@ -122,10 +123,10 @@ namespace Passiflora
                     string OrderID = DB.ds.Tables[0].Rows[0][0].ToString();
 
                     //Получение ID авторизованного пользователя
-                    string Query = "select ID_Пользователя from Пользователи where Логин = " + "\'" + DB.AuthorizedUser + "\'";
-                    DB.SearchValuesQuery(Query);
+                    DB.GetAuthorizedUserID();
                     string AuthorizedUserID = DB.ds.Tables[0].Rows[0][0].ToString();
 
+                    //Получение ID авторизованного клиента
                     string GetClientID = "select ID_Клиента from Клиенты where Данные_для_входа = " + "\'" + AuthorizedUserID + "\'";
                     DB.SearchValuesQuery(GetClientID);
                     string ClientID = DB.ds.Tables[0].Rows[0][0].ToString();
@@ -144,6 +145,8 @@ namespace Passiflora
             }
 
         }
+
+        #endregion
 
         private void BySelf_CheckedChanged(object sender, EventArgs e)
         {

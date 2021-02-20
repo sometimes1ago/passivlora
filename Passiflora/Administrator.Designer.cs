@@ -35,9 +35,9 @@
             this.PagesCollection = new System.Windows.Forms.TabControl();
             this.OrdersPage = new System.Windows.Forms.TabPage();
             this.DeleteButton = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.RemovingOrder = new System.Windows.Forms.GroupBox();
             this.OrderDeletableInput = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.RemovableOrderNumber = new System.Windows.Forms.Label();
             this.TabPageDesc = new System.Windows.Forms.Label();
             this.SearchButton = new System.Windows.Forms.Button();
             this.DirectSearch = new System.Windows.Forms.GroupBox();
@@ -62,12 +62,12 @@
             this.DeletableSurname = new System.Windows.Forms.Label();
             this.AddingEmployee = new System.Windows.Forms.GroupBox();
             this.EmpRole = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.RoleLabel = new System.Windows.Forms.Label();
             this.AddEmpButton = new System.Windows.Forms.Button();
             this.PasswordInput = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
+            this.EmpPasswordLabel = new System.Windows.Forms.Label();
             this.LoginInput = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.EmpLoginLabel = new System.Windows.Forms.Label();
             this.PhoneInput = new System.Windows.Forms.TextBox();
             this.PhoneLabel = new System.Windows.Forms.Label();
             this.LastNameInput = new System.Windows.Forms.TextBox();
@@ -77,45 +77,98 @@
             this.SurnameInput = new System.Windows.Forms.TextBox();
             this.SurnameLabel = new System.Windows.Forms.Label();
             this.SearchEmpButton = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.DirectSearchEmp = new System.Windows.Forms.GroupBox();
             this.SearchEmpValue = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.SearchByEmpValueLabel = new System.Windows.Forms.Label();
             this.SearchEmp = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.SearchByEmpLabel = new System.Windows.Forms.Label();
             this.EmployeesData = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.Shipments = new System.Windows.Forms.TabPage();
-            this.Suppliers = new System.Windows.Forms.TabPage();
-            this.Products = new System.Windows.Forms.TabPage();
-            this.Clients = new System.Windows.Forms.TabPage();
-            this.label6 = new System.Windows.Forms.Label();
-            this.ShipmentData = new System.Windows.Forms.DataGridView();
-            this.AddShipmentInfo = new System.Windows.Forms.GroupBox();
-            this.SelectSupLabel = new System.Windows.Forms.Label();
-            this.SuppliersOptions = new System.Windows.Forms.ComboBox();
-            this.EnterDateLabel = new System.Windows.Forms.Label();
-            this.DateFormatLabel = new System.Windows.Forms.Label();
+            this.UpdateShipmentsDataButton = new System.Windows.Forms.Button();
+            this.DeleteShimpentButton = new System.Windows.Forms.Button();
+            this.RemoveShipmentGroup = new System.Windows.Forms.GroupBox();
+            this.ShipmentNumber = new System.Windows.Forms.TextBox();
+            this.DeletableShipmentLabel = new System.Windows.Forms.Label();
             this.AddShipmentButton = new System.Windows.Forms.Button();
+            this.AddShipmentInfo = new System.Windows.Forms.GroupBox();
+            this.DateInput = new System.Windows.Forms.TextBox();
+            this.CountInput = new System.Windows.Forms.TextBox();
+            this.EnterCountLabel = new System.Windows.Forms.Label();
             this.SelectProduct = new System.Windows.Forms.ComboBox();
             this.SelectProdLabel = new System.Windows.Forms.Label();
-            this.EnterCountLabel = new System.Windows.Forms.Label();
-            this.CountInput = new System.Windows.Forms.TextBox();
-            this.UpdateDataButton = new System.Windows.Forms.Button();
-            this.DateInput = new System.Windows.Forms.TextBox();
+            this.DateFormatLabel = new System.Windows.Forms.Label();
+            this.EnterDateLabel = new System.Windows.Forms.Label();
+            this.SuppliersOptions = new System.Windows.Forms.ComboBox();
+            this.SelectSupLabel = new System.Windows.Forms.Label();
+            this.ShipmentData = new System.Windows.Forms.DataGridView();
+            this.label6 = new System.Windows.Forms.Label();
+            this.Products = new System.Windows.Forms.TabPage();
+            this.SearchProdGroup = new System.Windows.Forms.GroupBox();
+            this.SearchByButton = new System.Windows.Forms.Button();
+            this.SearchByProdValue = new System.Windows.Forms.TextBox();
+            this.EnterValueSearchBy = new System.Windows.Forms.Label();
+            this.SearchByProdOptions = new System.Windows.Forms.ComboBox();
+            this.SearchProdByLabel = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.DeleteProdButton = new System.Windows.Forms.Button();
+            this.DeleteProdInput = new System.Windows.Forms.TextBox();
+            this.DeleteProdLabel = new System.Windows.Forms.Label();
+            this.UpdateProdDataButton = new System.Windows.Forms.Button();
+            this.AddProdButton = new System.Windows.Forms.Button();
+            this.ProductAdding = new System.Windows.Forms.GroupBox();
+            this.PriceInput = new System.Windows.Forms.TextBox();
+            this.HeightInput = new System.Windows.Forms.TextBox();
+            this.WidthInput = new System.Windows.Forms.TextBox();
+            this.LengthInput = new System.Windows.Forms.TextBox();
+            this.PriceLabel = new System.Windows.Forms.Label();
+            this.HeightLabel = new System.Windows.Forms.Label();
+            this.WidthLabel = new System.Windows.Forms.Label();
+            this.LengthLabel = new System.Windows.Forms.Label();
+            this.ProdTypeOptions = new System.Windows.Forms.ComboBox();
+            this.SelectProdTypeLabel = new System.Windows.Forms.Label();
+            this.ProdNameInput = new System.Windows.Forms.TextBox();
+            this.EnterNameLabel = new System.Windows.Forms.Label();
+            this.ProductsDataLabel = new System.Windows.Forms.Label();
+            this.ProductsData = new System.Windows.Forms.DataGridView();
+            this.Clients = new System.Windows.Forms.TabPage();
+            this.RemoveClient = new System.Windows.Forms.GroupBox();
+            this.RemovableClientLogin = new System.Windows.Forms.TextBox();
+            this.EnterLoginLabel = new System.Windows.Forms.Label();
+            this.DeleteClientButton = new System.Windows.Forms.Button();
+            this.SearchClientGroup = new System.Windows.Forms.GroupBox();
+            this.SearchClientButton = new System.Windows.Forms.Button();
+            this.SearchClientValueInput = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.SearchClientByOptions = new System.Windows.Forms.ComboBox();
+            this.SearchClientByLabel = new System.Windows.Forms.Label();
+            this.ClientsData = new System.Windows.Forms.DataGridView();
+            this.ClientDataLabel = new System.Windows.Forms.Label();
+            this.Suppliers = new System.Windows.Forms.TabPage();
             this.PagesCollection.SuspendLayout();
             this.OrdersPage.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.RemovingOrder.SuspendLayout();
             this.DirectSearch.SuspendLayout();
             this.SortGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.OrdersData)).BeginInit();
             this.EditEmployeeData.SuspendLayout();
             this.DeleteEmp.SuspendLayout();
             this.AddingEmployee.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.DirectSearchEmp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeesData)).BeginInit();
             this.Shipments.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ShipmentData)).BeginInit();
+            this.RemoveShipmentGroup.SuspendLayout();
             this.AddShipmentInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ShipmentData)).BeginInit();
+            this.Products.SuspendLayout();
+            this.SearchProdGroup.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.ProductAdding.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ProductsData)).BeginInit();
+            this.Clients.SuspendLayout();
+            this.RemoveClient.SuspendLayout();
+            this.SearchClientGroup.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ClientsData)).BeginInit();
             this.SuspendLayout();
             // 
             // LogoutLink
@@ -160,9 +213,9 @@
             this.PagesCollection.Controls.Add(this.OrdersPage);
             this.PagesCollection.Controls.Add(this.EditEmployeeData);
             this.PagesCollection.Controls.Add(this.Shipments);
-            this.PagesCollection.Controls.Add(this.Suppliers);
             this.PagesCollection.Controls.Add(this.Products);
             this.PagesCollection.Controls.Add(this.Clients);
+            this.PagesCollection.Controls.Add(this.Suppliers);
             this.PagesCollection.Location = new System.Drawing.Point(21, 128);
             this.PagesCollection.Name = "PagesCollection";
             this.PagesCollection.SelectedIndex = 0;
@@ -172,7 +225,7 @@
             // OrdersPage
             // 
             this.OrdersPage.Controls.Add(this.DeleteButton);
-            this.OrdersPage.Controls.Add(this.groupBox1);
+            this.OrdersPage.Controls.Add(this.RemovingOrder);
             this.OrdersPage.Controls.Add(this.TabPageDesc);
             this.OrdersPage.Controls.Add(this.SearchButton);
             this.OrdersPage.Controls.Add(this.DirectSearch);
@@ -202,17 +255,17 @@
             this.DeleteButton.UseVisualStyleBackColor = false;
             this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
-            // groupBox1
+            // RemovingOrder
             // 
-            this.groupBox1.Controls.Add(this.OrderDeletableInput);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox1.Location = new System.Drawing.Point(593, 326);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(225, 96);
-            this.groupBox1.TabIndex = 27;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Удаление заказа";
+            this.RemovingOrder.Controls.Add(this.OrderDeletableInput);
+            this.RemovingOrder.Controls.Add(this.RemovableOrderNumber);
+            this.RemovingOrder.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.RemovingOrder.Location = new System.Drawing.Point(593, 326);
+            this.RemovingOrder.Name = "RemovingOrder";
+            this.RemovingOrder.Size = new System.Drawing.Size(225, 96);
+            this.RemovingOrder.TabIndex = 27;
+            this.RemovingOrder.TabStop = false;
+            this.RemovingOrder.Text = "Удаление заказа";
             // 
             // OrderDeletableInput
             // 
@@ -221,14 +274,14 @@
             this.OrderDeletableInput.Size = new System.Drawing.Size(100, 22);
             this.OrderDeletableInput.TabIndex = 1;
             // 
-            // label2
+            // RemovableOrderNumber
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 30);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(80, 13);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Номер заказа";
+            this.RemovableOrderNumber.AutoSize = true;
+            this.RemovableOrderNumber.Location = new System.Drawing.Point(6, 30);
+            this.RemovableOrderNumber.Name = "RemovableOrderNumber";
+            this.RemovableOrderNumber.Size = new System.Drawing.Size(80, 13);
+            this.RemovableOrderNumber.TabIndex = 0;
+            this.RemovableOrderNumber.Text = "Номер заказа";
             // 
             // TabPageDesc
             // 
@@ -398,7 +451,7 @@
             this.EditEmployeeData.Controls.Add(this.DeleteEmp);
             this.EditEmployeeData.Controls.Add(this.AddingEmployee);
             this.EditEmployeeData.Controls.Add(this.SearchEmpButton);
-            this.EditEmployeeData.Controls.Add(this.groupBox2);
+            this.EditEmployeeData.Controls.Add(this.DirectSearchEmp);
             this.EditEmployeeData.Controls.Add(this.EmployeesData);
             this.EditEmployeeData.Controls.Add(this.label1);
             this.EditEmployeeData.Location = new System.Drawing.Point(4, 22);
@@ -488,12 +541,12 @@
             // AddingEmployee
             // 
             this.AddingEmployee.Controls.Add(this.EmpRole);
-            this.AddingEmployee.Controls.Add(this.label5);
+            this.AddingEmployee.Controls.Add(this.RoleLabel);
             this.AddingEmployee.Controls.Add(this.AddEmpButton);
             this.AddingEmployee.Controls.Add(this.PasswordInput);
-            this.AddingEmployee.Controls.Add(this.label10);
+            this.AddingEmployee.Controls.Add(this.EmpPasswordLabel);
             this.AddingEmployee.Controls.Add(this.LoginInput);
-            this.AddingEmployee.Controls.Add(this.label9);
+            this.AddingEmployee.Controls.Add(this.EmpLoginLabel);
             this.AddingEmployee.Controls.Add(this.PhoneInput);
             this.AddingEmployee.Controls.Add(this.PhoneLabel);
             this.AddingEmployee.Controls.Add(this.LastNameInput);
@@ -521,14 +574,14 @@
             this.EmpRole.Size = new System.Drawing.Size(104, 21);
             this.EmpRole.TabIndex = 38;
             // 
-            // label5
+            // RoleLabel
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(362, 25);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(32, 13);
-            this.label5.TabIndex = 37;
-            this.label5.Text = "Роль";
+            this.RoleLabel.AutoSize = true;
+            this.RoleLabel.Location = new System.Drawing.Point(362, 25);
+            this.RoleLabel.Name = "RoleLabel";
+            this.RoleLabel.Size = new System.Drawing.Size(32, 13);
+            this.RoleLabel.TabIndex = 37;
+            this.RoleLabel.Text = "Роль";
             // 
             // AddEmpButton
             // 
@@ -552,14 +605,14 @@
             this.PasswordInput.Size = new System.Drawing.Size(100, 22);
             this.PasswordInput.TabIndex = 15;
             // 
-            // label10
+            // EmpPasswordLabel
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(246, 69);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(47, 13);
-            this.label10.TabIndex = 14;
-            this.label10.Text = "Пароль";
+            this.EmpPasswordLabel.AutoSize = true;
+            this.EmpPasswordLabel.Location = new System.Drawing.Point(246, 69);
+            this.EmpPasswordLabel.Name = "EmpPasswordLabel";
+            this.EmpPasswordLabel.Size = new System.Drawing.Size(47, 13);
+            this.EmpPasswordLabel.TabIndex = 14;
+            this.EmpPasswordLabel.Text = "Пароль";
             // 
             // LoginInput
             // 
@@ -568,14 +621,14 @@
             this.LoginInput.Size = new System.Drawing.Size(100, 22);
             this.LoginInput.TabIndex = 13;
             // 
-            // label9
+            // EmpLoginLabel
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(245, 25);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(40, 13);
-            this.label9.TabIndex = 12;
-            this.label9.Text = "Логин";
+            this.EmpLoginLabel.AutoSize = true;
+            this.EmpLoginLabel.Location = new System.Drawing.Point(245, 25);
+            this.EmpLoginLabel.Name = "EmpLoginLabel";
+            this.EmpLoginLabel.Size = new System.Drawing.Size(40, 13);
+            this.EmpLoginLabel.TabIndex = 12;
+            this.EmpLoginLabel.Text = "Логин";
             // 
             // PhoneInput
             // 
@@ -656,19 +709,19 @@
             this.SearchEmpButton.UseVisualStyleBackColor = false;
             this.SearchEmpButton.Click += new System.EventHandler(this.SearchEmpButton_Click);
             // 
-            // groupBox2
+            // DirectSearchEmp
             // 
-            this.groupBox2.Controls.Add(this.SearchEmpValue);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.SearchEmp);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox2.Location = new System.Drawing.Point(26, 340);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(276, 96);
-            this.groupBox2.TabIndex = 33;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Прямой поиск";
+            this.DirectSearchEmp.Controls.Add(this.SearchEmpValue);
+            this.DirectSearchEmp.Controls.Add(this.SearchByEmpValueLabel);
+            this.DirectSearchEmp.Controls.Add(this.SearchEmp);
+            this.DirectSearchEmp.Controls.Add(this.SearchByEmpLabel);
+            this.DirectSearchEmp.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DirectSearchEmp.Location = new System.Drawing.Point(26, 340);
+            this.DirectSearchEmp.Name = "DirectSearchEmp";
+            this.DirectSearchEmp.Size = new System.Drawing.Size(276, 96);
+            this.DirectSearchEmp.TabIndex = 33;
+            this.DirectSearchEmp.TabStop = false;
+            this.DirectSearchEmp.Text = "Прямой поиск";
             // 
             // SearchEmpValue
             // 
@@ -677,14 +730,14 @@
             this.SearchEmpValue.Size = new System.Drawing.Size(121, 22);
             this.SearchEmpValue.TabIndex = 3;
             // 
-            // label3
+            // SearchByEmpValueLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 61);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(104, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Введите значение";
+            this.SearchByEmpValueLabel.AutoSize = true;
+            this.SearchByEmpValueLabel.Location = new System.Drawing.Point(6, 61);
+            this.SearchByEmpValueLabel.Name = "SearchByEmpValueLabel";
+            this.SearchByEmpValueLabel.Size = new System.Drawing.Size(104, 13);
+            this.SearchByEmpValueLabel.TabIndex = 2;
+            this.SearchByEmpValueLabel.Text = "Введите значение";
             // 
             // SearchEmp
             // 
@@ -696,14 +749,14 @@
             this.SearchEmp.Size = new System.Drawing.Size(121, 21);
             this.SearchEmp.TabIndex = 1;
             // 
-            // label4
+            // SearchByEmpLabel
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 30);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 13);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Искать по:";
+            this.SearchByEmpLabel.AutoSize = true;
+            this.SearchByEmpLabel.Location = new System.Drawing.Point(6, 30);
+            this.SearchByEmpLabel.Name = "SearchByEmpLabel";
+            this.SearchByEmpLabel.Size = new System.Drawing.Size(63, 13);
+            this.SearchByEmpLabel.TabIndex = 0;
+            this.SearchByEmpLabel.Text = "Искать по:";
             // 
             // EmployeesData
             // 
@@ -726,7 +779,9 @@
             // 
             // Shipments
             // 
-            this.Shipments.Controls.Add(this.UpdateDataButton);
+            this.Shipments.Controls.Add(this.UpdateShipmentsDataButton);
+            this.Shipments.Controls.Add(this.DeleteShimpentButton);
+            this.Shipments.Controls.Add(this.RemoveShipmentGroup);
             this.Shipments.Controls.Add(this.AddShipmentButton);
             this.Shipments.Controls.Add(this.AddShipmentInfo);
             this.Shipments.Controls.Add(this.ShipmentData);
@@ -738,53 +793,77 @@
             this.Shipments.Text = "Поставки";
             this.Shipments.UseVisualStyleBackColor = true;
             // 
-            // Suppliers
+            // UpdateShipmentsDataButton
             // 
-            this.Suppliers.Location = new System.Drawing.Point(4, 22);
-            this.Suppliers.Name = "Suppliers";
-            this.Suppliers.Size = new System.Drawing.Size(1142, 495);
-            this.Suppliers.TabIndex = 3;
-            this.Suppliers.Text = "Поставщики";
-            this.Suppliers.UseVisualStyleBackColor = true;
+            this.UpdateShipmentsDataButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(91)))), ((int)(((byte)(66)))));
+            this.UpdateShipmentsDataButton.FlatAppearance.BorderSize = 0;
+            this.UpdateShipmentsDataButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.UpdateShipmentsDataButton.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.UpdateShipmentsDataButton.ForeColor = System.Drawing.Color.White;
+            this.UpdateShipmentsDataButton.Location = new System.Drawing.Point(808, 346);
+            this.UpdateShipmentsDataButton.Name = "UpdateShipmentsDataButton";
+            this.UpdateShipmentsDataButton.Size = new System.Drawing.Size(157, 36);
+            this.UpdateShipmentsDataButton.TabIndex = 42;
+            this.UpdateShipmentsDataButton.Text = "Обновить данные";
+            this.UpdateShipmentsDataButton.UseVisualStyleBackColor = false;
+            this.UpdateShipmentsDataButton.Click += new System.EventHandler(this.UpdateShipmentsDataButton_Click);
             // 
-            // Products
+            // DeleteShimpentButton
             // 
-            this.Products.Location = new System.Drawing.Point(4, 22);
-            this.Products.Name = "Products";
-            this.Products.Size = new System.Drawing.Size(1142, 495);
-            this.Products.TabIndex = 4;
-            this.Products.Text = "Товары";
-            this.Products.UseVisualStyleBackColor = true;
+            this.DeleteShimpentButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(91)))), ((int)(((byte)(66)))));
+            this.DeleteShimpentButton.FlatAppearance.BorderSize = 0;
+            this.DeleteShimpentButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeleteShimpentButton.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DeleteShimpentButton.ForeColor = System.Drawing.Color.White;
+            this.DeleteShimpentButton.Location = new System.Drawing.Point(613, 444);
+            this.DeleteShimpentButton.Name = "DeleteShimpentButton";
+            this.DeleteShimpentButton.Size = new System.Drawing.Size(157, 36);
+            this.DeleteShimpentButton.TabIndex = 41;
+            this.DeleteShimpentButton.Text = "Удалить";
+            this.DeleteShimpentButton.UseVisualStyleBackColor = false;
+            this.DeleteShimpentButton.Click += new System.EventHandler(this.DeleteShimpentButton_Click);
             // 
-            // Clients
+            // RemoveShipmentGroup
             // 
-            this.Clients.Location = new System.Drawing.Point(4, 22);
-            this.Clients.Name = "Clients";
-            this.Clients.Size = new System.Drawing.Size(1142, 495);
-            this.Clients.TabIndex = 5;
-            this.Clients.Text = "Клиенты";
-            this.Clients.UseVisualStyleBackColor = true;
+            this.RemoveShipmentGroup.Controls.Add(this.ShipmentNumber);
+            this.RemoveShipmentGroup.Controls.Add(this.DeletableShipmentLabel);
+            this.RemoveShipmentGroup.Location = new System.Drawing.Point(613, 346);
+            this.RemoveShipmentGroup.Name = "RemoveShipmentGroup";
+            this.RemoveShipmentGroup.Size = new System.Drawing.Size(175, 92);
+            this.RemoveShipmentGroup.TabIndex = 40;
+            this.RemoveShipmentGroup.TabStop = false;
+            this.RemoveShipmentGroup.Text = "Удаление поставки";
             // 
-            // label6
+            // ShipmentNumber
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(18, 20);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(137, 19);
-            this.label6.TabIndex = 32;
-            this.label6.Text = "Данные о поставках";
+            this.ShipmentNumber.Location = new System.Drawing.Point(10, 52);
+            this.ShipmentNumber.Name = "ShipmentNumber";
+            this.ShipmentNumber.Size = new System.Drawing.Size(137, 22);
+            this.ShipmentNumber.TabIndex = 1;
             // 
-            // ShipmentData
+            // DeletableShipmentLabel
             // 
-            this.ShipmentData.AllowUserToAddRows = false;
-            this.ShipmentData.AllowUserToDeleteRows = false;
-            this.ShipmentData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ShipmentData.Location = new System.Drawing.Point(22, 58);
-            this.ShipmentData.Name = "ShipmentData";
-            this.ShipmentData.ReadOnly = true;
-            this.ShipmentData.Size = new System.Drawing.Size(1090, 262);
-            this.ShipmentData.TabIndex = 33;
+            this.DeletableShipmentLabel.AutoSize = true;
+            this.DeletableShipmentLabel.Location = new System.Drawing.Point(7, 29);
+            this.DeletableShipmentLabel.Name = "DeletableShipmentLabel";
+            this.DeletableShipmentLabel.Size = new System.Drawing.Size(140, 13);
+            this.DeletableShipmentLabel.TabIndex = 0;
+            this.DeletableShipmentLabel.Text = "Введите номер поставки";
+            // 
+            // AddShipmentButton
+            // 
+            this.AddShipmentButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(91)))), ((int)(((byte)(66)))));
+            this.AddShipmentButton.FlatAppearance.BorderSize = 0;
+            this.AddShipmentButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddShipmentButton.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AddShipmentButton.ForeColor = System.Drawing.Color.White;
+            this.AddShipmentButton.Location = new System.Drawing.Point(22, 444);
+            this.AddShipmentButton.Name = "AddShipmentButton";
+            this.AddShipmentButton.Size = new System.Drawing.Size(104, 36);
+            this.AddShipmentButton.TabIndex = 37;
+            this.AddShipmentButton.Text = "Добавить";
+            this.AddShipmentButton.UseVisualStyleBackColor = false;
+            this.AddShipmentButton.Click += new System.EventHandler(this.AddShipmentButton_Click);
             // 
             // AddShipmentInfo
             // 
@@ -804,55 +883,28 @@
             this.AddShipmentInfo.TabStop = false;
             this.AddShipmentInfo.Text = "Добавить информацию о поставке";
             // 
-            // SelectSupLabel
+            // DateInput
             // 
-            this.SelectSupLabel.AutoSize = true;
-            this.SelectSupLabel.Location = new System.Drawing.Point(6, 28);
-            this.SelectSupLabel.Name = "SelectSupLabel";
-            this.SelectSupLabel.Size = new System.Drawing.Size(127, 13);
-            this.SelectSupLabel.TabIndex = 0;
-            this.SelectSupLabel.Text = "Выберите поставщика";
+            this.DateInput.Location = new System.Drawing.Point(160, 61);
+            this.DateInput.Name = "DateInput";
+            this.DateInput.Size = new System.Drawing.Size(100, 22);
+            this.DateInput.TabIndex = 9;
             // 
-            // SuppliersOptions
+            // CountInput
             // 
-            this.SuppliersOptions.FormattingEnabled = true;
-            this.SuppliersOptions.Location = new System.Drawing.Point(160, 28);
-            this.SuppliersOptions.Name = "SuppliersOptions";
-            this.SuppliersOptions.Size = new System.Drawing.Size(121, 21);
-            this.SuppliersOptions.TabIndex = 1;
+            this.CountInput.Location = new System.Drawing.Point(422, 58);
+            this.CountInput.Name = "CountInput";
+            this.CountInput.Size = new System.Drawing.Size(100, 22);
+            this.CountInput.TabIndex = 8;
             // 
-            // EnterDateLabel
+            // EnterCountLabel
             // 
-            this.EnterDateLabel.AutoSize = true;
-            this.EnterDateLabel.Location = new System.Drawing.Point(6, 52);
-            this.EnterDateLabel.Name = "EnterDateLabel";
-            this.EnterDateLabel.Size = new System.Drawing.Size(75, 13);
-            this.EnterDateLabel.TabIndex = 2;
-            this.EnterDateLabel.Text = "Введите дату";
-            // 
-            // DateFormatLabel
-            // 
-            this.DateFormatLabel.AutoSize = true;
-            this.DateFormatLabel.Location = new System.Drawing.Point(6, 70);
-            this.DateFormatLabel.Name = "DateFormatLabel";
-            this.DateFormatLabel.Size = new System.Drawing.Size(140, 13);
-            this.DateFormatLabel.TabIndex = 3;
-            this.DateFormatLabel.Text = "Формат даты : 30-12-2020";
-            // 
-            // AddShipmentButton
-            // 
-            this.AddShipmentButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(91)))), ((int)(((byte)(66)))));
-            this.AddShipmentButton.FlatAppearance.BorderSize = 0;
-            this.AddShipmentButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddShipmentButton.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.AddShipmentButton.ForeColor = System.Drawing.Color.White;
-            this.AddShipmentButton.Location = new System.Drawing.Point(22, 444);
-            this.AddShipmentButton.Name = "AddShipmentButton";
-            this.AddShipmentButton.Size = new System.Drawing.Size(104, 36);
-            this.AddShipmentButton.TabIndex = 37;
-            this.AddShipmentButton.Text = "Добавить";
-            this.AddShipmentButton.UseVisualStyleBackColor = false;
-            this.AddShipmentButton.Click += new System.EventHandler(this.AddShipmentButton_Click);
+            this.EnterCountLabel.AutoSize = true;
+            this.EnterCountLabel.Location = new System.Drawing.Point(301, 61);
+            this.EnterCountLabel.Name = "EnterCountLabel";
+            this.EnterCountLabel.Size = new System.Drawing.Size(115, 13);
+            this.EnterCountLabel.TabIndex = 7;
+            this.EnterCountLabel.Text = "Введите количество";
             // 
             // SelectProduct
             // 
@@ -871,43 +923,510 @@
             this.SelectProdLabel.TabIndex = 5;
             this.SelectProdLabel.Text = "Выберите товар";
             // 
-            // EnterCountLabel
+            // DateFormatLabel
             // 
-            this.EnterCountLabel.AutoSize = true;
-            this.EnterCountLabel.Location = new System.Drawing.Point(301, 61);
-            this.EnterCountLabel.Name = "EnterCountLabel";
-            this.EnterCountLabel.Size = new System.Drawing.Size(115, 13);
-            this.EnterCountLabel.TabIndex = 7;
-            this.EnterCountLabel.Text = "Введите количество";
+            this.DateFormatLabel.AutoSize = true;
+            this.DateFormatLabel.Location = new System.Drawing.Point(6, 70);
+            this.DateFormatLabel.Name = "DateFormatLabel";
+            this.DateFormatLabel.Size = new System.Drawing.Size(140, 13);
+            this.DateFormatLabel.TabIndex = 3;
+            this.DateFormatLabel.Text = "Формат даты : 30-12-2020";
             // 
-            // CountInput
+            // EnterDateLabel
             // 
-            this.CountInput.Location = new System.Drawing.Point(422, 58);
-            this.CountInput.Name = "CountInput";
-            this.CountInput.Size = new System.Drawing.Size(100, 22);
-            this.CountInput.TabIndex = 8;
+            this.EnterDateLabel.AutoSize = true;
+            this.EnterDateLabel.Location = new System.Drawing.Point(6, 52);
+            this.EnterDateLabel.Name = "EnterDateLabel";
+            this.EnterDateLabel.Size = new System.Drawing.Size(75, 13);
+            this.EnterDateLabel.TabIndex = 2;
+            this.EnterDateLabel.Text = "Введите дату";
             // 
-            // UpdateDataButton
+            // SuppliersOptions
             // 
-            this.UpdateDataButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(91)))), ((int)(((byte)(66)))));
-            this.UpdateDataButton.FlatAppearance.BorderSize = 0;
-            this.UpdateDataButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.UpdateDataButton.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.UpdateDataButton.ForeColor = System.Drawing.Color.White;
-            this.UpdateDataButton.Location = new System.Drawing.Point(607, 349);
-            this.UpdateDataButton.Name = "UpdateDataButton";
-            this.UpdateDataButton.Size = new System.Drawing.Size(157, 36);
-            this.UpdateDataButton.TabIndex = 39;
-            this.UpdateDataButton.Text = "Обновить данные";
-            this.UpdateDataButton.UseVisualStyleBackColor = false;
-            this.UpdateDataButton.Click += new System.EventHandler(this.UpdateDataButton_Click);
+            this.SuppliersOptions.FormattingEnabled = true;
+            this.SuppliersOptions.Location = new System.Drawing.Point(160, 28);
+            this.SuppliersOptions.Name = "SuppliersOptions";
+            this.SuppliersOptions.Size = new System.Drawing.Size(121, 21);
+            this.SuppliersOptions.TabIndex = 1;
             // 
-            // DateInput
+            // SelectSupLabel
             // 
-            this.DateInput.Location = new System.Drawing.Point(160, 61);
-            this.DateInput.Name = "DateInput";
-            this.DateInput.Size = new System.Drawing.Size(100, 22);
-            this.DateInput.TabIndex = 9;
+            this.SelectSupLabel.AutoSize = true;
+            this.SelectSupLabel.Location = new System.Drawing.Point(6, 28);
+            this.SelectSupLabel.Name = "SelectSupLabel";
+            this.SelectSupLabel.Size = new System.Drawing.Size(127, 13);
+            this.SelectSupLabel.TabIndex = 0;
+            this.SelectSupLabel.Text = "Выберите поставщика";
+            // 
+            // ShipmentData
+            // 
+            this.ShipmentData.AllowUserToAddRows = false;
+            this.ShipmentData.AllowUserToDeleteRows = false;
+            this.ShipmentData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ShipmentData.Location = new System.Drawing.Point(22, 58);
+            this.ShipmentData.Name = "ShipmentData";
+            this.ShipmentData.ReadOnly = true;
+            this.ShipmentData.Size = new System.Drawing.Size(1090, 262);
+            this.ShipmentData.TabIndex = 33;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.Location = new System.Drawing.Point(18, 20);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(137, 19);
+            this.label6.TabIndex = 32;
+            this.label6.Text = "Данные о поставках";
+            // 
+            // Products
+            // 
+            this.Products.Controls.Add(this.SearchProdGroup);
+            this.Products.Controls.Add(this.groupBox3);
+            this.Products.Controls.Add(this.UpdateProdDataButton);
+            this.Products.Controls.Add(this.AddProdButton);
+            this.Products.Controls.Add(this.ProductAdding);
+            this.Products.Controls.Add(this.ProductsDataLabel);
+            this.Products.Controls.Add(this.ProductsData);
+            this.Products.Location = new System.Drawing.Point(4, 22);
+            this.Products.Name = "Products";
+            this.Products.Size = new System.Drawing.Size(1142, 495);
+            this.Products.TabIndex = 4;
+            this.Products.Text = "Товары";
+            this.Products.UseVisualStyleBackColor = true;
+            // 
+            // SearchProdGroup
+            // 
+            this.SearchProdGroup.Controls.Add(this.SearchByButton);
+            this.SearchProdGroup.Controls.Add(this.SearchByProdValue);
+            this.SearchProdGroup.Controls.Add(this.EnterValueSearchBy);
+            this.SearchProdGroup.Controls.Add(this.SearchByProdOptions);
+            this.SearchProdGroup.Controls.Add(this.SearchProdByLabel);
+            this.SearchProdGroup.Location = new System.Drawing.Point(859, 185);
+            this.SearchProdGroup.Name = "SearchProdGroup";
+            this.SearchProdGroup.Size = new System.Drawing.Size(259, 172);
+            this.SearchProdGroup.TabIndex = 45;
+            this.SearchProdGroup.TabStop = false;
+            this.SearchProdGroup.Text = "Поиск товаров";
+            // 
+            // SearchByButton
+            // 
+            this.SearchByButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(91)))), ((int)(((byte)(66)))));
+            this.SearchByButton.FlatAppearance.BorderSize = 0;
+            this.SearchByButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SearchByButton.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.SearchByButton.ForeColor = System.Drawing.Color.White;
+            this.SearchByButton.Location = new System.Drawing.Point(13, 119);
+            this.SearchByButton.Name = "SearchByButton";
+            this.SearchByButton.Size = new System.Drawing.Size(104, 36);
+            this.SearchByButton.TabIndex = 40;
+            this.SearchByButton.Text = "Найти";
+            this.SearchByButton.UseVisualStyleBackColor = false;
+            this.SearchByButton.Click += new System.EventHandler(this.SearchByButton_Click);
+            // 
+            // SearchByProdValue
+            // 
+            this.SearchByProdValue.Location = new System.Drawing.Point(126, 72);
+            this.SearchByProdValue.Name = "SearchByProdValue";
+            this.SearchByProdValue.Size = new System.Drawing.Size(123, 22);
+            this.SearchByProdValue.TabIndex = 3;
+            // 
+            // EnterValueSearchBy
+            // 
+            this.EnterValueSearchBy.AutoSize = true;
+            this.EnterValueSearchBy.Location = new System.Drawing.Point(10, 75);
+            this.EnterValueSearchBy.Name = "EnterValueSearchBy";
+            this.EnterValueSearchBy.Size = new System.Drawing.Size(104, 13);
+            this.EnterValueSearchBy.TabIndex = 2;
+            this.EnterValueSearchBy.Text = "Введите значение";
+            // 
+            // SearchByProdOptions
+            // 
+            this.SearchByProdOptions.FormattingEnabled = true;
+            this.SearchByProdOptions.Items.AddRange(new object[] {
+            "Имени",
+            "Длине",
+            "Ширине",
+            "Высоте",
+            "Стоимости"});
+            this.SearchByProdOptions.Location = new System.Drawing.Point(128, 30);
+            this.SearchByProdOptions.Name = "SearchByProdOptions";
+            this.SearchByProdOptions.Size = new System.Drawing.Size(121, 21);
+            this.SearchByProdOptions.TabIndex = 1;
+            // 
+            // SearchProdByLabel
+            // 
+            this.SearchProdByLabel.AutoSize = true;
+            this.SearchProdByLabel.Location = new System.Drawing.Point(10, 33);
+            this.SearchProdByLabel.Name = "SearchProdByLabel";
+            this.SearchProdByLabel.Size = new System.Drawing.Size(63, 13);
+            this.SearchProdByLabel.TabIndex = 0;
+            this.SearchProdByLabel.Text = "Искать по:";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.DeleteProdButton);
+            this.groupBox3.Controls.Add(this.DeleteProdInput);
+            this.groupBox3.Controls.Add(this.DeleteProdLabel);
+            this.groupBox3.Location = new System.Drawing.Point(859, 48);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(259, 116);
+            this.groupBox3.TabIndex = 44;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Удалить товар";
+            // 
+            // DeleteProdButton
+            // 
+            this.DeleteProdButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(91)))), ((int)(((byte)(66)))));
+            this.DeleteProdButton.FlatAppearance.BorderSize = 0;
+            this.DeleteProdButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeleteProdButton.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DeleteProdButton.ForeColor = System.Drawing.Color.White;
+            this.DeleteProdButton.Location = new System.Drawing.Point(9, 63);
+            this.DeleteProdButton.Name = "DeleteProdButton";
+            this.DeleteProdButton.Size = new System.Drawing.Size(104, 36);
+            this.DeleteProdButton.TabIndex = 39;
+            this.DeleteProdButton.Text = "Удалить";
+            this.DeleteProdButton.UseVisualStyleBackColor = false;
+            this.DeleteProdButton.Click += new System.EventHandler(this.DeleteProdButton_Click);
+            // 
+            // DeleteProdInput
+            // 
+            this.DeleteProdInput.Location = new System.Drawing.Point(143, 26);
+            this.DeleteProdInput.Name = "DeleteProdInput";
+            this.DeleteProdInput.Size = new System.Drawing.Size(100, 22);
+            this.DeleteProdInput.TabIndex = 1;
+            // 
+            // DeleteProdLabel
+            // 
+            this.DeleteProdLabel.AutoSize = true;
+            this.DeleteProdLabel.Location = new System.Drawing.Point(6, 29);
+            this.DeleteProdLabel.Name = "DeleteProdLabel";
+            this.DeleteProdLabel.Size = new System.Drawing.Size(128, 13);
+            this.DeleteProdLabel.TabIndex = 0;
+            this.DeleteProdLabel.Text = "Введите номер товара";
+            // 
+            // UpdateProdDataButton
+            // 
+            this.UpdateProdDataButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(91)))), ((int)(((byte)(66)))));
+            this.UpdateProdDataButton.FlatAppearance.BorderSize = 0;
+            this.UpdateProdDataButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.UpdateProdDataButton.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.UpdateProdDataButton.ForeColor = System.Drawing.Color.White;
+            this.UpdateProdDataButton.Location = new System.Drawing.Point(731, 427);
+            this.UpdateProdDataButton.Name = "UpdateProdDataButton";
+            this.UpdateProdDataButton.Size = new System.Drawing.Size(157, 36);
+            this.UpdateProdDataButton.TabIndex = 43;
+            this.UpdateProdDataButton.Text = "Обновить данные";
+            this.UpdateProdDataButton.UseVisualStyleBackColor = false;
+            this.UpdateProdDataButton.Click += new System.EventHandler(this.UpdateProdDataButton_Click);
+            // 
+            // AddProdButton
+            // 
+            this.AddProdButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(91)))), ((int)(((byte)(66)))));
+            this.AddProdButton.FlatAppearance.BorderSize = 0;
+            this.AddProdButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddProdButton.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AddProdButton.ForeColor = System.Drawing.Color.White;
+            this.AddProdButton.Location = new System.Drawing.Point(731, 379);
+            this.AddProdButton.Name = "AddProdButton";
+            this.AddProdButton.Size = new System.Drawing.Size(104, 36);
+            this.AddProdButton.TabIndex = 38;
+            this.AddProdButton.Text = "Добавить";
+            this.AddProdButton.UseVisualStyleBackColor = false;
+            this.AddProdButton.Click += new System.EventHandler(this.AddProdButton_Click);
+            // 
+            // ProductAdding
+            // 
+            this.ProductAdding.Controls.Add(this.PriceInput);
+            this.ProductAdding.Controls.Add(this.HeightInput);
+            this.ProductAdding.Controls.Add(this.WidthInput);
+            this.ProductAdding.Controls.Add(this.LengthInput);
+            this.ProductAdding.Controls.Add(this.PriceLabel);
+            this.ProductAdding.Controls.Add(this.HeightLabel);
+            this.ProductAdding.Controls.Add(this.WidthLabel);
+            this.ProductAdding.Controls.Add(this.LengthLabel);
+            this.ProductAdding.Controls.Add(this.ProdTypeOptions);
+            this.ProductAdding.Controls.Add(this.SelectProdTypeLabel);
+            this.ProductAdding.Controls.Add(this.ProdNameInput);
+            this.ProductAdding.Controls.Add(this.EnterNameLabel);
+            this.ProductAdding.Location = new System.Drawing.Point(15, 373);
+            this.ProductAdding.Name = "ProductAdding";
+            this.ProductAdding.Size = new System.Drawing.Size(710, 100);
+            this.ProductAdding.TabIndex = 34;
+            this.ProductAdding.TabStop = false;
+            this.ProductAdding.Text = "Добавление товара";
+            // 
+            // PriceInput
+            // 
+            this.PriceInput.Location = new System.Drawing.Point(592, 66);
+            this.PriceInput.Name = "PriceInput";
+            this.PriceInput.Size = new System.Drawing.Size(100, 22);
+            this.PriceInput.TabIndex = 11;
+            // 
+            // HeightInput
+            // 
+            this.HeightInput.Location = new System.Drawing.Point(593, 26);
+            this.HeightInput.Name = "HeightInput";
+            this.HeightInput.Size = new System.Drawing.Size(100, 22);
+            this.HeightInput.TabIndex = 10;
+            // 
+            // WidthInput
+            // 
+            this.WidthInput.Location = new System.Drawing.Point(360, 66);
+            this.WidthInput.Name = "WidthInput";
+            this.WidthInput.Size = new System.Drawing.Size(100, 22);
+            this.WidthInput.TabIndex = 9;
+            // 
+            // LengthInput
+            // 
+            this.LengthInput.Location = new System.Drawing.Point(359, 26);
+            this.LengthInput.Name = "LengthInput";
+            this.LengthInput.Size = new System.Drawing.Size(100, 22);
+            this.LengthInput.TabIndex = 8;
+            // 
+            // PriceLabel
+            // 
+            this.PriceLabel.AutoSize = true;
+            this.PriceLabel.Location = new System.Drawing.Point(474, 69);
+            this.PriceLabel.Name = "PriceLabel";
+            this.PriceLabel.Size = new System.Drawing.Size(108, 13);
+            this.PriceLabel.TabIndex = 7;
+            this.PriceLabel.Text = "Введите стоимость";
+            // 
+            // HeightLabel
+            // 
+            this.HeightLabel.AutoSize = true;
+            this.HeightLabel.Location = new System.Drawing.Point(473, 26);
+            this.HeightLabel.Name = "HeightLabel";
+            this.HeightLabel.Size = new System.Drawing.Size(107, 13);
+            this.HeightLabel.TabIndex = 6;
+            this.HeightLabel.Text = "Введите высоту_см";
+            // 
+            // WidthLabel
+            // 
+            this.WidthLabel.AutoSize = true;
+            this.WidthLabel.Location = new System.Drawing.Point(239, 69);
+            this.WidthLabel.Name = "WidthLabel";
+            this.WidthLabel.Size = new System.Drawing.Size(113, 13);
+            this.WidthLabel.TabIndex = 5;
+            this.WidthLabel.Text = "Введите ширину_см";
+            // 
+            // LengthLabel
+            // 
+            this.LengthLabel.AutoSize = true;
+            this.LengthLabel.Location = new System.Drawing.Point(239, 29);
+            this.LengthLabel.Name = "LengthLabel";
+            this.LengthLabel.Size = new System.Drawing.Size(102, 13);
+            this.LengthLabel.TabIndex = 4;
+            this.LengthLabel.Text = "Введите длину_см";
+            // 
+            // ProdTypeOptions
+            // 
+            this.ProdTypeOptions.FormattingEnabled = true;
+            this.ProdTypeOptions.Location = new System.Drawing.Point(122, 64);
+            this.ProdTypeOptions.Name = "ProdTypeOptions";
+            this.ProdTypeOptions.Size = new System.Drawing.Size(100, 21);
+            this.ProdTypeOptions.TabIndex = 3;
+            // 
+            // SelectProdTypeLabel
+            // 
+            this.SelectProdTypeLabel.AutoSize = true;
+            this.SelectProdTypeLabel.Location = new System.Drawing.Point(6, 69);
+            this.SelectProdTypeLabel.Name = "SelectProdTypeLabel";
+            this.SelectProdTypeLabel.Size = new System.Drawing.Size(82, 13);
+            this.SelectProdTypeLabel.TabIndex = 2;
+            this.SelectProdTypeLabel.Text = "Выберите тип";
+            // 
+            // ProdNameInput
+            // 
+            this.ProdNameInput.Location = new System.Drawing.Point(122, 26);
+            this.ProdNameInput.Name = "ProdNameInput";
+            this.ProdNameInput.Size = new System.Drawing.Size(100, 22);
+            this.ProdNameInput.TabIndex = 1;
+            // 
+            // EnterNameLabel
+            // 
+            this.EnterNameLabel.AutoSize = true;
+            this.EnterNameLabel.Location = new System.Drawing.Point(6, 29);
+            this.EnterNameLabel.Name = "EnterNameLabel";
+            this.EnterNameLabel.Size = new System.Drawing.Size(103, 13);
+            this.EnterNameLabel.TabIndex = 0;
+            this.EnterNameLabel.Text = "Введите название";
+            // 
+            // ProductsDataLabel
+            // 
+            this.ProductsDataLabel.AutoSize = true;
+            this.ProductsDataLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ProductsDataLabel.Location = new System.Drawing.Point(11, 15);
+            this.ProductsDataLabel.Name = "ProductsDataLabel";
+            this.ProductsDataLabel.Size = new System.Drawing.Size(124, 19);
+            this.ProductsDataLabel.TabIndex = 33;
+            this.ProductsDataLabel.Text = "Данные о товарах";
+            // 
+            // ProductsData
+            // 
+            this.ProductsData.AllowUserToAddRows = false;
+            this.ProductsData.AllowUserToDeleteRows = false;
+            this.ProductsData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ProductsData.Location = new System.Drawing.Point(14, 48);
+            this.ProductsData.Name = "ProductsData";
+            this.ProductsData.ReadOnly = true;
+            this.ProductsData.Size = new System.Drawing.Size(821, 309);
+            this.ProductsData.TabIndex = 0;
+            // 
+            // Clients
+            // 
+            this.Clients.Controls.Add(this.RemoveClient);
+            this.Clients.Controls.Add(this.SearchClientGroup);
+            this.Clients.Controls.Add(this.ClientsData);
+            this.Clients.Controls.Add(this.ClientDataLabel);
+            this.Clients.Location = new System.Drawing.Point(4, 22);
+            this.Clients.Name = "Clients";
+            this.Clients.Size = new System.Drawing.Size(1142, 495);
+            this.Clients.TabIndex = 5;
+            this.Clients.Text = "Клиенты";
+            this.Clients.UseVisualStyleBackColor = true;
+            // 
+            // RemoveClient
+            // 
+            this.RemoveClient.Controls.Add(this.RemovableClientLogin);
+            this.RemoveClient.Controls.Add(this.EnterLoginLabel);
+            this.RemoveClient.Controls.Add(this.DeleteClientButton);
+            this.RemoveClient.Location = new System.Drawing.Point(457, 348);
+            this.RemoveClient.Name = "RemoveClient";
+            this.RemoveClient.Size = new System.Drawing.Size(285, 115);
+            this.RemoveClient.TabIndex = 37;
+            this.RemoveClient.TabStop = false;
+            this.RemoveClient.Text = "Удаление клиента";
+            // 
+            // RemovableClientLogin
+            // 
+            this.RemovableClientLogin.Location = new System.Drawing.Point(126, 28);
+            this.RemovableClientLogin.Name = "RemovableClientLogin";
+            this.RemovableClientLogin.Size = new System.Drawing.Size(100, 22);
+            this.RemovableClientLogin.TabIndex = 42;
+            // 
+            // EnterLoginLabel
+            // 
+            this.EnterLoginLabel.AutoSize = true;
+            this.EnterLoginLabel.Location = new System.Drawing.Point(18, 31);
+            this.EnterLoginLabel.Name = "EnterLoginLabel";
+            this.EnterLoginLabel.Size = new System.Drawing.Size(85, 13);
+            this.EnterLoginLabel.TabIndex = 41;
+            this.EnterLoginLabel.Text = "Введите логин";
+            // 
+            // DeleteClientButton
+            // 
+            this.DeleteClientButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(91)))), ((int)(((byte)(66)))));
+            this.DeleteClientButton.FlatAppearance.BorderSize = 0;
+            this.DeleteClientButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeleteClientButton.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DeleteClientButton.ForeColor = System.Drawing.Color.White;
+            this.DeleteClientButton.Location = new System.Drawing.Point(18, 66);
+            this.DeleteClientButton.Name = "DeleteClientButton";
+            this.DeleteClientButton.Size = new System.Drawing.Size(104, 36);
+            this.DeleteClientButton.TabIndex = 40;
+            this.DeleteClientButton.Text = "Удалить";
+            this.DeleteClientButton.UseVisualStyleBackColor = false;
+            this.DeleteClientButton.Click += new System.EventHandler(this.DeleteClientButton_Click);
+            // 
+            // SearchClientGroup
+            // 
+            this.SearchClientGroup.Controls.Add(this.SearchClientButton);
+            this.SearchClientGroup.Controls.Add(this.SearchClientValueInput);
+            this.SearchClientGroup.Controls.Add(this.label2);
+            this.SearchClientGroup.Controls.Add(this.SearchClientByOptions);
+            this.SearchClientGroup.Controls.Add(this.SearchClientByLabel);
+            this.SearchClientGroup.Location = new System.Drawing.Point(22, 348);
+            this.SearchClientGroup.Name = "SearchClientGroup";
+            this.SearchClientGroup.Size = new System.Drawing.Size(394, 115);
+            this.SearchClientGroup.TabIndex = 36;
+            this.SearchClientGroup.TabStop = false;
+            this.SearchClientGroup.Text = "Поиск клиента";
+            // 
+            // SearchClientButton
+            // 
+            this.SearchClientButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(91)))), ((int)(((byte)(66)))));
+            this.SearchClientButton.FlatAppearance.BorderSize = 0;
+            this.SearchClientButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SearchClientButton.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.SearchClientButton.ForeColor = System.Drawing.Color.White;
+            this.SearchClientButton.Location = new System.Drawing.Point(272, 32);
+            this.SearchClientButton.Name = "SearchClientButton";
+            this.SearchClientButton.Size = new System.Drawing.Size(104, 36);
+            this.SearchClientButton.TabIndex = 39;
+            this.SearchClientButton.Text = "Найти";
+            this.SearchClientButton.UseVisualStyleBackColor = false;
+            this.SearchClientButton.Click += new System.EventHandler(this.SearchClientButton_Click);
+            // 
+            // SearchClientValueInput
+            // 
+            this.SearchClientValueInput.Location = new System.Drawing.Point(129, 66);
+            this.SearchClientValueInput.Name = "SearchClientValueInput";
+            this.SearchClientValueInput.Size = new System.Drawing.Size(121, 22);
+            this.SearchClientValueInput.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 66);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(104, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Введите значение";
+            // 
+            // SearchClientByOptions
+            // 
+            this.SearchClientByOptions.FormattingEnabled = true;
+            this.SearchClientByOptions.Items.AddRange(new object[] {
+            "Фамилии",
+            "Телефону",
+            "Логину",
+            "Секретному ключу"});
+            this.SearchClientByOptions.Location = new System.Drawing.Point(129, 32);
+            this.SearchClientByOptions.Name = "SearchClientByOptions";
+            this.SearchClientByOptions.Size = new System.Drawing.Size(121, 21);
+            this.SearchClientByOptions.TabIndex = 1;
+            // 
+            // SearchClientByLabel
+            // 
+            this.SearchClientByLabel.AutoSize = true;
+            this.SearchClientByLabel.Location = new System.Drawing.Point(6, 32);
+            this.SearchClientByLabel.Name = "SearchClientByLabel";
+            this.SearchClientByLabel.Size = new System.Drawing.Size(60, 13);
+            this.SearchClientByLabel.TabIndex = 0;
+            this.SearchClientByLabel.Text = "Искать по";
+            // 
+            // ClientsData
+            // 
+            this.ClientsData.AllowUserToAddRows = false;
+            this.ClientsData.AllowUserToDeleteRows = false;
+            this.ClientsData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ClientsData.Location = new System.Drawing.Point(22, 60);
+            this.ClientsData.Name = "ClientsData";
+            this.ClientsData.ReadOnly = true;
+            this.ClientsData.Size = new System.Drawing.Size(809, 261);
+            this.ClientsData.TabIndex = 35;
+            // 
+            // ClientDataLabel
+            // 
+            this.ClientDataLabel.AutoSize = true;
+            this.ClientDataLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ClientDataLabel.Location = new System.Drawing.Point(18, 22);
+            this.ClientDataLabel.Name = "ClientDataLabel";
+            this.ClientDataLabel.Size = new System.Drawing.Size(131, 19);
+            this.ClientDataLabel.TabIndex = 34;
+            this.ClientDataLabel.Text = "Данные о клиентах";
+            // 
+            // Suppliers
+            // 
+            this.Suppliers.Location = new System.Drawing.Point(4, 22);
+            this.Suppliers.Name = "Suppliers";
+            this.Suppliers.Size = new System.Drawing.Size(1142, 495);
+            this.Suppliers.TabIndex = 6;
+            this.Suppliers.Text = "Поставщики";
+            this.Suppliers.UseVisualStyleBackColor = true;
             // 
             // Administrator
             // 
@@ -927,8 +1446,8 @@
             this.PagesCollection.ResumeLayout(false);
             this.OrdersPage.ResumeLayout(false);
             this.OrdersPage.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.RemovingOrder.ResumeLayout(false);
+            this.RemovingOrder.PerformLayout();
             this.DirectSearch.ResumeLayout(false);
             this.DirectSearch.PerformLayout();
             this.SortGroupBox.ResumeLayout(false);
@@ -940,14 +1459,32 @@
             this.DeleteEmp.PerformLayout();
             this.AddingEmployee.ResumeLayout(false);
             this.AddingEmployee.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.DirectSearchEmp.ResumeLayout(false);
+            this.DirectSearchEmp.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeesData)).EndInit();
             this.Shipments.ResumeLayout(false);
             this.Shipments.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ShipmentData)).EndInit();
+            this.RemoveShipmentGroup.ResumeLayout(false);
+            this.RemoveShipmentGroup.PerformLayout();
             this.AddShipmentInfo.ResumeLayout(false);
             this.AddShipmentInfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ShipmentData)).EndInit();
+            this.Products.ResumeLayout(false);
+            this.Products.PerformLayout();
+            this.SearchProdGroup.ResumeLayout(false);
+            this.SearchProdGroup.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.ProductAdding.ResumeLayout(false);
+            this.ProductAdding.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ProductsData)).EndInit();
+            this.Clients.ResumeLayout(false);
+            this.Clients.PerformLayout();
+            this.RemoveClient.ResumeLayout(false);
+            this.RemoveClient.PerformLayout();
+            this.SearchClientGroup.ResumeLayout(false);
+            this.SearchClientGroup.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ClientsData)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -962,7 +1499,6 @@
         private System.Windows.Forms.TabPage OrdersPage;
         private System.Windows.Forms.TabPage EditEmployeeData;
         private System.Windows.Forms.TabPage Shipments;
-        private System.Windows.Forms.TabPage Suppliers;
         private System.Windows.Forms.TabPage Products;
         private System.Windows.Forms.Button SearchButton;
         private System.Windows.Forms.GroupBox DirectSearch;
@@ -979,24 +1515,24 @@
         private System.Windows.Forms.DataGridView OrdersData;
         private System.Windows.Forms.Label TabPageDesc;
         private System.Windows.Forms.Button DeleteButton;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.GroupBox RemovingOrder;
+        private System.Windows.Forms.Label RemovableOrderNumber;
         private System.Windows.Forms.TextBox OrderDeletableInput;
         private System.Windows.Forms.Button SearchEmpButton;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox DirectSearchEmp;
         private System.Windows.Forms.TextBox SearchEmpValue;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label SearchByEmpValueLabel;
         private System.Windows.Forms.ComboBox SearchEmp;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label SearchByEmpLabel;
         private System.Windows.Forms.DataGridView EmployeesData;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage Clients;
         private System.Windows.Forms.GroupBox AddingEmployee;
         private System.Windows.Forms.Button AddEmpButton;
         private System.Windows.Forms.TextBox PasswordInput;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label EmpPasswordLabel;
         private System.Windows.Forms.TextBox LoginInput;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label EmpLoginLabel;
         private System.Windows.Forms.TextBox PhoneInput;
         private System.Windows.Forms.Label PhoneLabel;
         private System.Windows.Forms.TextBox LastNameInput;
@@ -1012,7 +1548,7 @@
         private System.Windows.Forms.Label DeletableSurname;
         private System.Windows.Forms.Button DeleteEmpButton;
         private System.Windows.Forms.ComboBox EmpRole;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label RoleLabel;
         private System.Windows.Forms.Button UpdateEmpData;
         private System.Windows.Forms.Button AddShipmentButton;
         private System.Windows.Forms.GroupBox AddShipmentInfo;
@@ -1026,7 +1562,51 @@
         private System.Windows.Forms.Label SelectSupLabel;
         private System.Windows.Forms.DataGridView ShipmentData;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button UpdateDataButton;
         private System.Windows.Forms.TextBox DateInput;
+        private System.Windows.Forms.Button DeleteShimpentButton;
+        private System.Windows.Forms.GroupBox RemoveShipmentGroup;
+        private System.Windows.Forms.TextBox ShipmentNumber;
+        private System.Windows.Forms.Label DeletableShipmentLabel;
+        private System.Windows.Forms.DataGridView ProductsData;
+        private System.Windows.Forms.Label ProductsDataLabel;
+        private System.Windows.Forms.GroupBox ProductAdding;
+        private System.Windows.Forms.Label EnterNameLabel;
+        private System.Windows.Forms.TextBox ProdNameInput;
+        private System.Windows.Forms.TextBox PriceInput;
+        private System.Windows.Forms.TextBox HeightInput;
+        private System.Windows.Forms.TextBox WidthInput;
+        private System.Windows.Forms.TextBox LengthInput;
+        private System.Windows.Forms.Label PriceLabel;
+        private System.Windows.Forms.Label HeightLabel;
+        private System.Windows.Forms.Label WidthLabel;
+        private System.Windows.Forms.Label LengthLabel;
+        private System.Windows.Forms.ComboBox ProdTypeOptions;
+        private System.Windows.Forms.Label SelectProdTypeLabel;
+        private System.Windows.Forms.Button AddProdButton;
+        private System.Windows.Forms.Button UpdateShipmentsDataButton;
+        private System.Windows.Forms.Button UpdateProdDataButton;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button DeleteProdButton;
+        private System.Windows.Forms.TextBox DeleteProdInput;
+        private System.Windows.Forms.Label DeleteProdLabel;
+        private System.Windows.Forms.GroupBox SearchProdGroup;
+        private System.Windows.Forms.Button SearchByButton;
+        private System.Windows.Forms.TextBox SearchByProdValue;
+        private System.Windows.Forms.Label EnterValueSearchBy;
+        private System.Windows.Forms.ComboBox SearchByProdOptions;
+        private System.Windows.Forms.Label SearchProdByLabel;
+        private System.Windows.Forms.DataGridView ClientsData;
+        private System.Windows.Forms.Label ClientDataLabel;
+        private System.Windows.Forms.GroupBox SearchClientGroup;
+        private System.Windows.Forms.Label SearchClientByLabel;
+        private System.Windows.Forms.ComboBox SearchClientByOptions;
+        private System.Windows.Forms.TextBox SearchClientValueInput;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button SearchClientButton;
+        private System.Windows.Forms.GroupBox RemoveClient;
+        private System.Windows.Forms.TabPage Suppliers;
+        private System.Windows.Forms.TextBox RemovableClientLogin;
+        private System.Windows.Forms.Label EnterLoginLabel;
+        private System.Windows.Forms.Button DeleteClientButton;
     }
 }
