@@ -246,9 +246,12 @@
             // 
             // GfData
             // 
+            this.GfData.AllowUserToAddRows = false;
+            this.GfData.AllowUserToDeleteRows = false;
             this.GfData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GfData.Location = new System.Drawing.Point(21, 95);
             this.GfData.Name = "GfData";
+            this.GfData.ReadOnly = true;
             this.GfData.Size = new System.Drawing.Size(642, 246);
             this.GfData.TabIndex = 32;
             // 
@@ -303,6 +306,7 @@
             this.Controls.Add(this.BackArrowImage);
             this.Controls.Add(this.BackLink);
             this.Controls.Add(this.SectionHeader);
+            this.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;

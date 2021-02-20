@@ -246,6 +246,8 @@
             // 
             // PtData
             // 
+            this.PtData.AllowUserToAddRows = false;
+            this.PtData.AllowUserToDeleteRows = false;
             this.PtData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.PtData.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnF2;
             this.PtData.Location = new System.Drawing.Point(21, 95);
@@ -305,6 +307,7 @@
             this.Controls.Add(this.BackArrowImage);
             this.Controls.Add(this.BackLink);
             this.Controls.Add(this.SectionHeader);
+            this.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;

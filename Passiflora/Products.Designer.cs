@@ -175,7 +175,7 @@
             this.AuthLink.AutoSize = true;
             this.AuthLink.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.AuthLink.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(91)))), ((int)(((byte)(66)))));
-            this.AuthLink.Location = new System.Drawing.Point(314, 29);
+            this.AuthLink.Location = new System.Drawing.Point(306, 27);
             this.AuthLink.Name = "AuthLink";
             this.AuthLink.Size = new System.Drawing.Size(120, 20);
             this.AuthLink.TabIndex = 13;
@@ -195,7 +195,7 @@
             // LoginIcon
             // 
             this.LoginIcon.Image = global::Passiflora.Properties.Resources.login;
-            this.LoginIcon.Location = new System.Drawing.Point(280, 24);
+            this.LoginIcon.Location = new System.Drawing.Point(272, 22);
             this.LoginIcon.Name = "LoginIcon";
             this.LoginIcon.Size = new System.Drawing.Size(28, 27);
             this.LoginIcon.TabIndex = 11;
@@ -264,6 +264,7 @@
             this.Controls.Add(this.ShowFlowers);
             this.Controls.Add(this.ShowBouquets);
             this.Controls.Add(this.ScreenHeader);
+            this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;

@@ -61,7 +61,7 @@
             // 
             this.SecretKeyInput.Location = new System.Drawing.Point(167, 125);
             this.SecretKeyInput.Name = "SecretKeyInput";
-            this.SecretKeyInput.Size = new System.Drawing.Size(180, 20);
+            this.SecretKeyInput.Size = new System.Drawing.Size(180, 22);
             this.SecretKeyInput.TabIndex = 5;
             // 
             // ShowDataButton
@@ -107,6 +107,7 @@
             this.Controls.Add(this.SecretKeyInput);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.SectionHeader);
+            this.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;

@@ -243,9 +243,12 @@
             // 
             // FlData
             // 
+            this.FlData.AllowUserToAddRows = false;
+            this.FlData.AllowUserToDeleteRows = false;
             this.FlData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.FlData.Location = new System.Drawing.Point(23, 86);
             this.FlData.Name = "FlData";
+            this.FlData.ReadOnly = true;
             this.FlData.Size = new System.Drawing.Size(642, 246);
             this.FlData.TabIndex = 24;
             // 
@@ -300,6 +303,7 @@
             this.Controls.Add(this.BackArrowImage);
             this.Controls.Add(this.BackLink);
             this.Controls.Add(this.SectionHeader);
+            this.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;

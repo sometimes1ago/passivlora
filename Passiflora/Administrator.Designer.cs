@@ -132,6 +132,7 @@
             this.ProductsDataLabel = new System.Windows.Forms.Label();
             this.ProductsData = new System.Windows.Forms.DataGridView();
             this.Clients = new System.Windows.Forms.TabPage();
+            this.UpdateCLientsData = new System.Windows.Forms.Button();
             this.RemoveClient = new System.Windows.Forms.GroupBox();
             this.RemovableClientLogin = new System.Windows.Forms.TextBox();
             this.EnterLoginLabel = new System.Windows.Forms.Label();
@@ -144,7 +145,6 @@
             this.SearchClientByLabel = new System.Windows.Forms.Label();
             this.ClientsData = new System.Windows.Forms.DataGridView();
             this.ClientDataLabel = new System.Windows.Forms.Label();
-            this.Suppliers = new System.Windows.Forms.TabPage();
             this.PagesCollection.SuspendLayout();
             this.OrdersPage.SuspendLayout();
             this.RemovingOrder.SuspendLayout();
@@ -215,7 +215,6 @@
             this.PagesCollection.Controls.Add(this.Shipments);
             this.PagesCollection.Controls.Add(this.Products);
             this.PagesCollection.Controls.Add(this.Clients);
-            this.PagesCollection.Controls.Add(this.Suppliers);
             this.PagesCollection.Location = new System.Drawing.Point(21, 128);
             this.PagesCollection.Name = "PagesCollection";
             this.PagesCollection.SelectedIndex = 0;
@@ -469,7 +468,7 @@
             this.UpdateEmpData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.UpdateEmpData.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.UpdateEmpData.ForeColor = System.Drawing.Color.White;
-            this.UpdateEmpData.Location = new System.Drawing.Point(818, 173);
+            this.UpdateEmpData.Location = new System.Drawing.Point(785, 170);
             this.UpdateEmpData.Name = "UpdateEmpData";
             this.UpdateEmpData.Size = new System.Drawing.Size(157, 36);
             this.UpdateEmpData.TabIndex = 38;
@@ -484,7 +483,7 @@
             this.DeleteEmp.Controls.Add(this.DeletableSurnameInput);
             this.DeleteEmp.Controls.Add(this.DeletableName);
             this.DeleteEmp.Controls.Add(this.DeletableSurname);
-            this.DeleteEmp.Location = new System.Drawing.Point(818, 64);
+            this.DeleteEmp.Location = new System.Drawing.Point(785, 64);
             this.DeleteEmp.Name = "DeleteEmp";
             this.DeleteEmp.Size = new System.Drawing.Size(304, 90);
             this.DeleteEmp.TabIndex = 36;
@@ -761,10 +760,12 @@
             // EmployeesData
             // 
             this.EmployeesData.AllowUserToAddRows = false;
+            this.EmployeesData.AllowUserToDeleteRows = false;
             this.EmployeesData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.EmployeesData.Location = new System.Drawing.Point(26, 64);
             this.EmployeesData.Name = "EmployeesData";
-            this.EmployeesData.Size = new System.Drawing.Size(777, 261);
+            this.EmployeesData.ReadOnly = true;
+            this.EmployeesData.Size = new System.Drawing.Size(743, 261);
             this.EmployeesData.TabIndex = 32;
             // 
             // label1
@@ -1277,6 +1278,7 @@
             // 
             // Clients
             // 
+            this.Clients.Controls.Add(this.UpdateCLientsData);
             this.Clients.Controls.Add(this.RemoveClient);
             this.Clients.Controls.Add(this.SearchClientGroup);
             this.Clients.Controls.Add(this.ClientsData);
@@ -1288,12 +1290,27 @@
             this.Clients.Text = "Клиенты";
             this.Clients.UseVisualStyleBackColor = true;
             // 
+            // UpdateCLientsData
+            // 
+            this.UpdateCLientsData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(91)))), ((int)(((byte)(66)))));
+            this.UpdateCLientsData.FlatAppearance.BorderSize = 0;
+            this.UpdateCLientsData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.UpdateCLientsData.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.UpdateCLientsData.ForeColor = System.Drawing.Color.White;
+            this.UpdateCLientsData.Location = new System.Drawing.Point(842, 190);
+            this.UpdateCLientsData.Name = "UpdateCLientsData";
+            this.UpdateCLientsData.Size = new System.Drawing.Size(157, 36);
+            this.UpdateCLientsData.TabIndex = 39;
+            this.UpdateCLientsData.Text = "Обновить данные";
+            this.UpdateCLientsData.UseVisualStyleBackColor = false;
+            this.UpdateCLientsData.Click += new System.EventHandler(this.UpdateCLientsData_Click);
+            // 
             // RemoveClient
             // 
             this.RemoveClient.Controls.Add(this.RemovableClientLogin);
             this.RemoveClient.Controls.Add(this.EnterLoginLabel);
             this.RemoveClient.Controls.Add(this.DeleteClientButton);
-            this.RemoveClient.Location = new System.Drawing.Point(457, 348);
+            this.RemoveClient.Location = new System.Drawing.Point(842, 60);
             this.RemoveClient.Name = "RemoveClient";
             this.RemoveClient.Size = new System.Drawing.Size(285, 115);
             this.RemoveClient.TabIndex = 37;
@@ -1419,19 +1436,11 @@
             this.ClientDataLabel.TabIndex = 34;
             this.ClientDataLabel.Text = "Данные о клиентах";
             // 
-            // Suppliers
-            // 
-            this.Suppliers.Location = new System.Drawing.Point(4, 22);
-            this.Suppliers.Name = "Suppliers";
-            this.Suppliers.Size = new System.Drawing.Size(1142, 495);
-            this.Suppliers.TabIndex = 6;
-            this.Suppliers.Text = "Поставщики";
-            this.Suppliers.UseVisualStyleBackColor = true;
-            // 
             // Administrator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1184, 661);
             this.Controls.Add(this.PagesCollection);
             this.Controls.Add(this.LogoutLink);
@@ -1439,6 +1448,7 @@
             this.Controls.Add(this.ScreenHeader);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Administrator";
             this.Text = "Пассифлора - Администратор";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Administrator_FormClosing);
@@ -1533,7 +1543,6 @@
         private System.Windows.Forms.Label EmpPasswordLabel;
         private System.Windows.Forms.TextBox LoginInput;
         private System.Windows.Forms.Label EmpLoginLabel;
-        private System.Windows.Forms.TextBox PhoneInput;
         private System.Windows.Forms.Label PhoneLabel;
         private System.Windows.Forms.TextBox LastNameInput;
         private System.Windows.Forms.Label LastnameLabel;
@@ -1604,9 +1613,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button SearchClientButton;
         private System.Windows.Forms.GroupBox RemoveClient;
-        private System.Windows.Forms.TabPage Suppliers;
         private System.Windows.Forms.TextBox RemovableClientLogin;
         private System.Windows.Forms.Label EnterLoginLabel;
         private System.Windows.Forms.Button DeleteClientButton;
+        private System.Windows.Forms.TextBox PhoneInput;
+        private System.Windows.Forms.Button UpdateCLientsData;
     }
 }

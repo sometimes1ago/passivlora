@@ -94,9 +94,12 @@
             // 
             // BqData
             // 
+            this.BqData.AllowUserToAddRows = false;
+            this.BqData.AllowUserToDeleteRows = false;
             this.BqData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.BqData.Location = new System.Drawing.Point(22, 88);
             this.BqData.Name = "BqData";
+            this.BqData.ReadOnly = true;
             this.BqData.Size = new System.Drawing.Size(642, 246);
             this.BqData.TabIndex = 16;
             // 

@@ -122,7 +122,7 @@
             // 
             this.AddressInput.Location = new System.Drawing.Point(16, 290);
             this.AddressInput.Name = "AddressInput";
-            this.AddressInput.Size = new System.Drawing.Size(185, 20);
+            this.AddressInput.Size = new System.Drawing.Size(185, 22);
             this.AddressInput.TabIndex = 10;
             // 
             // OrderButton
@@ -164,6 +164,7 @@
             this.Controls.Add(this.SelectedProdCountLabel);
             this.Controls.Add(this.SelectedProdLabel);
             this.Controls.Add(this.SectionHeader);
+            this.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;

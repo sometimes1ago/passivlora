@@ -246,9 +246,12 @@
             // 
             // PcData
             // 
+            this.PcData.AllowUserToAddRows = false;
+            this.PcData.AllowUserToDeleteRows = false;
             this.PcData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.PcData.Location = new System.Drawing.Point(21, 95);
             this.PcData.Name = "PcData";
+            this.PcData.ReadOnly = true;
             this.PcData.Size = new System.Drawing.Size(642, 246);
             this.PcData.TabIndex = 48;
             // 

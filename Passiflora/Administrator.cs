@@ -23,6 +23,7 @@ namespace Passiflora
 
         private void Administrator_Load(object sender, EventArgs e)
         {
+            //Установка сортировочных параметров по умолчанию
             SortOptions.SelectedItem = "Номеру";
             OrderOptions.SelectedItem = "Возрастанию";
             SearchEmp.SelectedItem = "Фамилии";
@@ -30,6 +31,7 @@ namespace Passiflora
             SelectProduct.SelectedItem = "Букет Весеннее настроение";
             ProdTypeOptions.SelectedItem = "Цветы";
 
+            //Получение установленных параметров сортировки
             string SortOpt = DB.GetSortMode(SortOptions.SelectedItem.ToString());
             string OrderOpt = DB.GetOrderBy(OrderOptions.SelectedItem.ToString());
 
@@ -78,6 +80,7 @@ namespace Passiflora
             ProdTypeOptions.SelectedItem = "Букеты";
             SearchByProdOptions.SelectedItem = "Имени";
 
+            //Получение данных обо всех клиентах
             string GetAllClients = "select * from GetAllClients";
             ClientsData.DataSource = DB.SearchValuesQuery(GetAllClients);
 
@@ -102,6 +105,11 @@ namespace Passiflora
 
         #region Обработка действий на странице с заказами
 
+        /// <summary>
+        /// Метод, обрабатывающий событие удаление заказа
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void DeleteButton_Click(object sender, EventArgs e)
         {
             try
@@ -138,6 +146,11 @@ namespace Passiflora
             }
         }
 
+        /// <summary>
+        /// Метод, обрабатывающий событие сортировки заказа
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SortButton_Click(object sender, EventArgs e)
         {
             string SortOpt = DB.GetSortMode(SortOptions.SelectedItem.ToString());
@@ -146,6 +159,11 @@ namespace Passiflora
             OrdersData.DataSource = DB.SearchValuesQuery(Query);
         }
 
+        /// <summary>
+        /// Метод, обрабатывающий событие поиска заказа по определенным параметрам
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SearchButton_Click(object sender, EventArgs e)
         {
             try
@@ -163,6 +181,12 @@ namespace Passiflora
         #endregion
 
         #region Обработка действий на странице с сотрудниками
+
+        /// <summary>
+        /// Метод, обрабатывающий событие поиска сотрудника по его фамилии
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SearchEmpButton_Click(object sender, EventArgs e)
         {
             //Запрос на поиск определенного сотрудника по фамилии
@@ -183,6 +207,11 @@ namespace Passiflora
             LastNameInput.Text = "";
         }
 
+        /// <summary>
+        /// Метод, обрабатывающий добавление нового сотрудника
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AddEmpButton_Click(object sender, EventArgs e)
         {
             //Генерация секретного ключа
@@ -250,6 +279,11 @@ namespace Passiflora
             }
         }
 
+        /// <summary>
+        /// Метод, обрабатывающий событие при удалении сотрудника
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void DeleteEmpButton_Click(object sender, EventArgs e)
         {
             try
@@ -283,6 +317,11 @@ namespace Passiflora
             }
         }
 
+        /// <summary>
+        /// Метод, обрабатывающий событие обновления данных о сотрудниках
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UpdateEmpData_Click(object sender, EventArgs e)
         {
             //Обновление данных в таблице
@@ -293,6 +332,12 @@ namespace Passiflora
         #endregion
 
         #region Обработка действий на странице с поставками
+
+        /// <summary>
+        /// Метод, обрабатывающий событие при добавлении товаров в поставку
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AddShipmentButton_Click(object sender, EventArgs e)
         {
             try
@@ -349,6 +394,11 @@ namespace Passiflora
             }
         }
 
+        /// <summary>
+        /// Метод, обрабатывающий удаление поставки
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void DeleteShimpentButton_Click(object sender, EventArgs e)
         {
             try
@@ -377,6 +427,11 @@ namespace Passiflora
             }
         }
 
+        /// <summary>
+        /// Метод, обрабатывающий обновление информации о поставках
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UpdateShipmentsDataButton_Click(object sender, EventArgs e)
         {
             //Получение всех данных о поставках и товарах в поставке на странице с поставками
@@ -388,6 +443,11 @@ namespace Passiflora
 
         #region Обработка действий на странице с товарами
 
+        /// <summary>
+        /// Метод, получающий ID выбранного в Combobox'e типа товара
+        /// </summary>
+        /// <param name="SelectedProd"></param>
+        /// <returns></returns>
         private string GetSelectedProdTypeID(string SelectedProd)
         {
             switch (SelectedProd)
@@ -415,6 +475,11 @@ namespace Passiflora
             return SelectedProd;
         }
 
+        /// <summary>
+        /// Метод, обрабатывающий добавление товара
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AddProdButton_Click(object sender, EventArgs e)
         {
             try
@@ -450,6 +515,11 @@ namespace Passiflora
             }
         }
 
+        /// <summary>
+        /// Метод, обновляющий данные о продуктах
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UpdateProdDataButton_Click(object sender, EventArgs e)
         {
             //Получение списка всех товаров
@@ -457,6 +527,11 @@ namespace Passiflora
             ProductsData.DataSource = DB.SearchValuesQuery(GetAllProds);
         }
 
+        /// <summary>
+        /// Метод, обрабатывающий удаление товара
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void DeleteProdButton_Click(object sender, EventArgs e)
         {
             try
@@ -478,6 +553,11 @@ namespace Passiflora
             }
         }
 
+        /// <summary>
+        /// Метод, обрабатывающий сортировку товаров, согласно выбранному пункту сортировки
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SearchByButton_Click(object sender, EventArgs e)
         {
             try
@@ -518,6 +598,13 @@ namespace Passiflora
 
         #endregion
 
+        #region Обработка действий на странице с клиентами
+
+        /// <summary>
+        /// Метод, получающий параметр сортировки для БД исходя из выбранного значения в Combobox'e
+        /// </summary>
+        /// <param name="SearchBy">Выбранный пункт в Cobmobox'e</param>
+        /// <returns></returns>
         private string SwitchClietnsSearchBy(string SearchBy)
         {
             switch (SearchBy)
@@ -539,6 +626,11 @@ namespace Passiflora
             return SearchBy;
         }
 
+        /// <summary>
+        /// Метод, обрабатывающий поиск клиента по определенному параметру
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SearchClientButton_Click(object sender, EventArgs e)
         {
             try
@@ -554,6 +646,11 @@ namespace Passiflora
             }
         }
 
+        /// <summary>
+        /// Метод, обрабатывающий удаление клиента
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void DeleteClientButton_Click(object sender, EventArgs e)
         {
             try
@@ -565,13 +662,23 @@ namespace Passiflora
                     DB.SearchValuesQuery(GetUserID);
                     string UserID = DB.ds.Tables[0].Rows[0][0].ToString();
 
+                    //Получение ID клиента согласно его данным для входа
+                    string GetClientID = "select ID_Клиента from Клиенты where Данные_для_входа = " + "\'" + UserID + "\'";
+                    DB.SearchValuesQuery(GetClientID);
+                    string ClientID = DB.ds.Tables[0].Rows[0][0].ToString();
+
+                    //Удаление заказа клиента
+                    string DeleteFromClientOrders = "delete from Заказы_клиентов where Клиент = " + "\'" + ClientID + "\'";
+                    DB.Execute(DeleteFromClientOrders);
+
                     //Удаление клиента
-                    string DeleteClient = "delete from Клиенты where Данные_для_входа = " + "\'" + UserID + "\'";
+                    string DeleteClient = "delete from Клиенты where ID_Клиента = " + "\'" + ClientID + "\'";
                     DB.Execute(DeleteClient);
 
                     //Удаление данных для авторизации
                     string DeleteAuthClientData = "delete from Пользователи where ID_Пользователя = " + "\'" + UserID + "\'";
                     DB.Execute(DeleteAuthClientData);
+                    MessageBox.Show($@"Клиент с логином: {RemovableClientLogin.Text} успешно удален!");
                 }
                 else
                 {
@@ -583,5 +690,13 @@ namespace Passiflora
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void UpdateCLientsData_Click(object sender, EventArgs e)
+        {
+            string GetAllClients = "select * from GetAllClients";
+            ClientsData.DataSource = DB.SearchValuesQuery(GetAllClients);
+        }
+
+        #endregion
     }
 }

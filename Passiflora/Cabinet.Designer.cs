@@ -34,6 +34,7 @@
             this.BackArrowImage = new System.Windows.Forms.PictureBox();
             this.SectionDesc = new System.Windows.Forms.Label();
             this.OrderData = new System.Windows.Forms.DataGridView();
+            this.UserOrdersAmount = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.BackArrowImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrderData)).BeginInit();
             this.SuspendLayout();
@@ -95,24 +96,37 @@
             this.OrderData.Size = new System.Drawing.Size(657, 240);
             this.OrderData.TabIndex = 43;
             // 
+            // UserOrdersAmount
+            // 
+            this.UserOrdersAmount.AutoSize = true;
+            this.UserOrdersAmount.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.UserOrdersAmount.Location = new System.Drawing.Point(11, 364);
+            this.UserOrdersAmount.Name = "UserOrdersAmount";
+            this.UserOrdersAmount.Size = new System.Drawing.Size(226, 21);
+            this.UserOrdersAmount.TabIndex = 44;
+            this.UserOrdersAmount.Text = "Сумма всех ваших заказов:";
+            // 
             // Cabinet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(684, 373);
+            this.ClientSize = new System.Drawing.Size(684, 408);
+            this.Controls.Add(this.UserOrdersAmount);
             this.Controls.Add(this.OrderData);
             this.Controls.Add(this.SectionDesc);
             this.Controls.Add(this.BackArrowImage);
             this.Controls.Add(this.BackLink);
             this.Controls.Add(this.SectionHeader);
+            this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Cabinet";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Пассифлора - личный кабинет";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Cabinet_FormClosing);
             this.Load += new System.EventHandler(this.Cabinet_Load);
             ((System.ComponentModel.ISupportInitialize)(this.BackArrowImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrderData)).EndInit();
@@ -128,5 +142,6 @@
         private System.Windows.Forms.LinkLabel BackLink;
         private System.Windows.Forms.Label SectionDesc;
         private System.Windows.Forms.DataGridView OrderData;
+        private System.Windows.Forms.Label UserOrdersAmount;
     }
 }
