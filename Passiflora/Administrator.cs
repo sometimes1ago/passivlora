@@ -108,31 +108,40 @@ namespace Passiflora
         /// <summary>
         /// Метод, обрабатывающий событие удаление заказа
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void DeleteButton_Click(object sender, EventArgs e)
         {
             try
             {
-                if (int.TryParse(OrderDeletableInput.Text,out int OrderNumber))
+                if (int.TryParse(OrderDeletableInput.Text, out int OrderNumber))
                 {
-                    //Запрос на удаление заказа клиентов
-                    string DropFromUserOrders = "delete from Заказы_клиентов where Заказ = " + "\'" + OrderNumber + "\'";
-                    DB.Execute(DropFromUserOrders);
+                    string SelectDeletableOrder = "select ID_Заказа from Заказы where ID_Заказа = " + "\'" + OrderNumber + "\'";
+                    DB.SearchValuesQuery(SelectDeletableOrder);
+                    string DeletableOrder = DB.ds.Tables[0].Rows[0][0].ToString();
 
-                    //Запрос на удаление конкретно заказа
-                    string DeleteQuery = "delete from Заказы where ID_Заказа = " + "\'" + OrderNumber + "\'";
-                    DB.Execute(DeleteQuery);
+                    if (!DeletableOrder.Equals("") && DeletableOrder != null)
+                    {
+                        //Запрос на удаление заказа клиентов
+                        string DropFromUserOrders = "delete from Заказы_клиентов where Заказ = " + "\'" + DeletableOrder + "\'";
+                        DB.Execute(DropFromUserOrders);
 
-                    var result = MessageBox.Show($@"Заказ с номером {OrderNumber} успешно удален!", "Отчет об операции", MessageBoxButtons.OK);
+                        //Запрос на удаление конкретно заказа
+                        string DeleteQuery = "delete from Заказы where ID_Заказа = " + "\'" + DeletableOrder + "\'";
+                        DB.Execute(DeleteQuery);
 
-                    //Получение параметров сортировки
-                    string SortOpt = DB.GetSortMode(SortOptions.SelectedItem.ToString());
-                    string OrderOpt = DB.GetOrderBy(OrderOptions.SelectedItem.ToString());
+                        var result = MessageBox.Show($@"Заказ с номером {OrderNumber} успешно удален!", "Отчет об операции", MessageBoxButtons.OK);
 
-                    //Обновление данных в таблице согласно сортировочным параметрам
-                    string GetQuery = "select * from GetAllUsersOrders order by " + SortOpt + " " + OrderOpt;
-                    OrdersData.DataSource = DB.SearchValuesQuery(GetQuery);
+                        //Получение параметров сортировки
+                        string SortOpt = DB.GetSortMode(SortOptions.SelectedItem.ToString());
+                        string OrderOpt = DB.GetOrderBy(OrderOptions.SelectedItem.ToString());
+
+                        //Обновление данных в таблице согласно сортировочным параметрам
+                        string GetQuery = "select * from GetAllUsersOrders order by " + SortOpt + " " + OrderOpt;
+                        OrdersData.DataSource = DB.SearchValuesQuery(GetQuery);
+                    }
+                    else
+                    {
+                        throw new Exception("Заказа с данным номером не существует!");
+                    }
                 }
                 else
                 {
@@ -149,8 +158,6 @@ namespace Passiflora
         /// <summary>
         /// Метод, обрабатывающий событие сортировки заказа
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void SortButton_Click(object sender, EventArgs e)
         {
             string SortOpt = DB.GetSortMode(SortOptions.SelectedItem.ToString());
@@ -162,8 +169,6 @@ namespace Passiflora
         /// <summary>
         /// Метод, обрабатывающий событие поиска заказа по определенным параметрам
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void SearchButton_Click(object sender, EventArgs e)
         {
             try
