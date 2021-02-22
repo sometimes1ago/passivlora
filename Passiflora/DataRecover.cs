@@ -33,10 +33,11 @@ namespace Passiflora
                     string GetUserdataByKey = "select Логин, Пароль from Пользователи where Ключ = " + "\'" + SecretKeyInput.Text + "\'";
                     DB.SearchValuesQuery(GetUserdataByKey);
                     MessageBox.Show($@"Ваши данные: Логин - {DB.ds.Tables[0].Rows[0][0].ToString()}. Пароль - {DB.ds.Tables[0].Rows[0][1].ToString()} ");
+                    SecretKeyInput.Text = "";
                 }
                 else
                 {
-                    throw new Exception("Введите секретный ключ для получения данных! Получена пустая строка!");
+                    throw new Exception("Введите секретный ключ для получения данных!");
                 }
             }
             catch (Exception ex)

@@ -468,7 +468,7 @@
             this.UpdateEmpData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.UpdateEmpData.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.UpdateEmpData.ForeColor = System.Drawing.Color.White;
-            this.UpdateEmpData.Location = new System.Drawing.Point(785, 170);
+            this.UpdateEmpData.Location = new System.Drawing.Point(819, 173);
             this.UpdateEmpData.Name = "UpdateEmpData";
             this.UpdateEmpData.Size = new System.Drawing.Size(157, 36);
             this.UpdateEmpData.TabIndex = 38;
@@ -483,7 +483,7 @@
             this.DeleteEmp.Controls.Add(this.DeletableSurnameInput);
             this.DeleteEmp.Controls.Add(this.DeletableName);
             this.DeleteEmp.Controls.Add(this.DeletableSurname);
-            this.DeleteEmp.Location = new System.Drawing.Point(785, 64);
+            this.DeleteEmp.Location = new System.Drawing.Point(819, 64);
             this.DeleteEmp.Name = "DeleteEmp";
             this.DeleteEmp.Size = new System.Drawing.Size(304, 90);
             this.DeleteEmp.TabIndex = 36;
@@ -765,7 +765,7 @@
             this.EmployeesData.Location = new System.Drawing.Point(26, 64);
             this.EmployeesData.Name = "EmployeesData";
             this.EmployeesData.ReadOnly = true;
-            this.EmployeesData.Size = new System.Drawing.Size(743, 261);
+            this.EmployeesData.Size = new System.Drawing.Size(777, 261);
             this.EmployeesData.TabIndex = 32;
             // 
             // label1
@@ -781,7 +781,6 @@
             // Shipments
             // 
             this.Shipments.Controls.Add(this.UpdateShipmentsDataButton);
-            this.Shipments.Controls.Add(this.DeleteShimpentButton);
             this.Shipments.Controls.Add(this.RemoveShipmentGroup);
             this.Shipments.Controls.Add(this.AddShipmentButton);
             this.Shipments.Controls.Add(this.AddShipmentInfo);
@@ -801,7 +800,7 @@
             this.UpdateShipmentsDataButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.UpdateShipmentsDataButton.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.UpdateShipmentsDataButton.ForeColor = System.Drawing.Color.White;
-            this.UpdateShipmentsDataButton.Location = new System.Drawing.Point(808, 346);
+            this.UpdateShipmentsDataButton.Location = new System.Drawing.Point(711, 217);
             this.UpdateShipmentsDataButton.Name = "UpdateShipmentsDataButton";
             this.UpdateShipmentsDataButton.Size = new System.Drawing.Size(157, 36);
             this.UpdateShipmentsDataButton.TabIndex = 42;
@@ -816,7 +815,7 @@
             this.DeleteShimpentButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DeleteShimpentButton.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.DeleteShimpentButton.ForeColor = System.Drawing.Color.White;
-            this.DeleteShimpentButton.Location = new System.Drawing.Point(613, 444);
+            this.DeleteShimpentButton.Location = new System.Drawing.Point(10, 85);
             this.DeleteShimpentButton.Name = "DeleteShimpentButton";
             this.DeleteShimpentButton.Size = new System.Drawing.Size(157, 36);
             this.DeleteShimpentButton.TabIndex = 41;
@@ -827,10 +826,11 @@
             // RemoveShipmentGroup
             // 
             this.RemoveShipmentGroup.Controls.Add(this.ShipmentNumber);
+            this.RemoveShipmentGroup.Controls.Add(this.DeleteShimpentButton);
             this.RemoveShipmentGroup.Controls.Add(this.DeletableShipmentLabel);
-            this.RemoveShipmentGroup.Location = new System.Drawing.Point(613, 346);
+            this.RemoveShipmentGroup.Location = new System.Drawing.Point(711, 58);
             this.RemoveShipmentGroup.Name = "RemoveShipmentGroup";
-            this.RemoveShipmentGroup.Size = new System.Drawing.Size(175, 92);
+            this.RemoveShipmentGroup.Size = new System.Drawing.Size(209, 144);
             this.RemoveShipmentGroup.TabIndex = 40;
             this.RemoveShipmentGroup.TabStop = false;
             this.RemoveShipmentGroup.Text = "Удаление поставки";
@@ -967,7 +967,7 @@
             this.ShipmentData.Location = new System.Drawing.Point(22, 58);
             this.ShipmentData.Name = "ShipmentData";
             this.ShipmentData.ReadOnly = true;
-            this.ShipmentData.Size = new System.Drawing.Size(1090, 262);
+            this.ShipmentData.Size = new System.Drawing.Size(661, 262);
             this.ShipmentData.TabIndex = 33;
             // 
             // label6
@@ -1003,7 +1003,7 @@
             this.SearchProdGroup.Controls.Add(this.EnterValueSearchBy);
             this.SearchProdGroup.Controls.Add(this.SearchByProdOptions);
             this.SearchProdGroup.Controls.Add(this.SearchProdByLabel);
-            this.SearchProdGroup.Location = new System.Drawing.Point(859, 185);
+            this.SearchProdGroup.Location = new System.Drawing.Point(803, 185);
             this.SearchProdGroup.Name = "SearchProdGroup";
             this.SearchProdGroup.Size = new System.Drawing.Size(259, 172);
             this.SearchProdGroup.TabIndex = 45;
@@ -1069,7 +1069,7 @@
             this.groupBox3.Controls.Add(this.DeleteProdButton);
             this.groupBox3.Controls.Add(this.DeleteProdInput);
             this.groupBox3.Controls.Add(this.DeleteProdLabel);
-            this.groupBox3.Location = new System.Drawing.Point(859, 48);
+            this.groupBox3.Location = new System.Drawing.Point(803, 48);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(259, 116);
             this.groupBox3.TabIndex = 44;
@@ -1273,7 +1273,7 @@
             this.ProductsData.Location = new System.Drawing.Point(14, 48);
             this.ProductsData.Name = "ProductsData";
             this.ProductsData.ReadOnly = true;
-            this.ProductsData.Size = new System.Drawing.Size(821, 309);
+            this.ProductsData.Size = new System.Drawing.Size(766, 309);
             this.ProductsData.TabIndex = 0;
             // 
             // Clients

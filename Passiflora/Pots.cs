@@ -55,6 +55,8 @@ namespace Passiflora
             {
                 ProdNames.Items.Add(DB.ds.Tables[0].Rows[i][0].ToString());
             }
+
+            ProdNames.SelectedItem = "Маленький";
         }
 
         private void SortButton_Click(object sender, EventArgs e)
@@ -77,15 +79,16 @@ namespace Passiflora
 
             try
             {
-                if (ProdNames.SelectedItem != null && !Count.Text.Equals(""))
+                if (int.TryParse(Count.Text, out int count))
                 {
                     ord.SetSelectedProduct(ProdNames.SelectedItem.ToString());
-                    ord.SetSelectedProdCount(Convert.ToInt32(Count.Text));
+                    ord.SetSelectedProdCount(count);
                     ord.Show();
+                    Count.Text = "";
                 }
                 else
                 {
-                    throw new Exception("Вы должны выбрать товар для заказа и указать количество не меньше 1!");
+                    throw new Exception("Количество заказываемого товара может быть только целочисленным значением!");
                 }
             }
             catch (Exception ex)

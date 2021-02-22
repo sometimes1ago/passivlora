@@ -81,7 +81,7 @@
             this.OrderGroup.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.OrderGroup.Location = new System.Drawing.Point(315, 351);
             this.OrderGroup.Name = "OrderGroup";
-            this.OrderGroup.Size = new System.Drawing.Size(261, 132);
+            this.OrderGroup.Size = new System.Drawing.Size(281, 132);
             this.OrderGroup.TabIndex = 27;
             this.OrderGroup.TabStop = false;
             this.OrderGroup.Text = "Заказать";
@@ -98,7 +98,7 @@
             // 
             this.Count.Location = new System.Drawing.Point(134, 56);
             this.Count.Name = "Count";
-            this.Count.Size = new System.Drawing.Size(68, 22);
+            this.Count.Size = new System.Drawing.Size(121, 22);
             this.Count.TabIndex = 3;
             // 
             // label1

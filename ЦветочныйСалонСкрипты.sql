@@ -139,6 +139,24 @@ as
 	end
 go
 
+create trigger ValidOrderDelete
+on Заказы
+for delete
+as
+	declare @id int = (select ID_Заказа from deleted)
+		begin
+			if exists (select ID_Заказа from Заказы where ID_Заказа = @id)
+				begin
+					delete from Заказы where ID_Заказа = @id
+				end
+			else
+				begin
+					rollback transaction 
+					raiserror('Заказа с таким номером не существует! Удаление невозможно!',0,1)
+				end
+		end
+go
+
 create view GetAllClients
 (Номер_клиента, Фамилия, Имя, Телефон, Логин, Пароль, Секретный_ключ)
 as

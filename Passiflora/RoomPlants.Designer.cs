@@ -48,8 +48,8 @@
             this.RpData = new System.Windows.Forms.DataGridView();
             this.BackLink = new System.Windows.Forms.LinkLabel();
             this.SectionHeader = new System.Windows.Forms.Label();
-            this.Count = new System.Windows.Forms.MaskedTextBox();
             this.BackArrowImage = new System.Windows.Forms.PictureBox();
+            this.Count = new System.Windows.Forms.TextBox();
             this.OrderGroup.SuspendLayout();
             this.SortGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RpData)).BeginInit();
@@ -81,7 +81,7 @@
             this.OrderGroup.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.OrderGroup.Location = new System.Drawing.Point(313, 360);
             this.OrderGroup.Name = "OrderGroup";
-            this.OrderGroup.Size = new System.Drawing.Size(261, 132);
+            this.OrderGroup.Size = new System.Drawing.Size(287, 132);
             this.OrderGroup.TabIndex = 43;
             this.OrderGroup.TabStop = false;
             this.OrderGroup.Text = "Заказать";
@@ -268,16 +268,6 @@
             this.SectionHeader.TabIndex = 37;
             this.SectionHeader.Text = "Наши комнатные растения";
             // 
-            // Count
-            // 
-            this.Count.Location = new System.Drawing.Point(134, 58);
-            this.Count.Mask = "00000";
-            this.Count.Name = "Count";
-            this.Count.PromptChar = ' ';
-            this.Count.Size = new System.Drawing.Size(57, 22);
-            this.Count.TabIndex = 22;
-            this.Count.ValidatingType = typeof(int);
-            // 
             // BackArrowImage
             // 
             this.BackArrowImage.Image = global::Passiflora.Properties.Resources.BackArrow;
@@ -287,6 +277,13 @@
             this.BackArrowImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.BackArrowImage.TabIndex = 39;
             this.BackArrowImage.TabStop = false;
+            // 
+            // Count
+            // 
+            this.Count.Location = new System.Drawing.Point(134, 54);
+            this.Count.Name = "Count";
+            this.Count.Size = new System.Drawing.Size(121, 22);
+            this.Count.TabIndex = 22;
             // 
             // RoomPlants
             // 
@@ -344,6 +341,6 @@
         private System.Windows.Forms.PictureBox BackArrowImage;
         private System.Windows.Forms.LinkLabel BackLink;
         private System.Windows.Forms.Label SectionHeader;
-        private System.Windows.Forms.MaskedTextBox Count;
+        private System.Windows.Forms.TextBox Count;
     }
 }

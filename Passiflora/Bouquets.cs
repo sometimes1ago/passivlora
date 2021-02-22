@@ -57,6 +57,8 @@ namespace Passiflora
             {
                 ProdNames.Items.Add(DB.ds.Tables[0].Rows[i][0].ToString());
             }
+
+            ProdNames.SelectedItem = "Букет Весеннее настроение";
         }
 
         private void Bouquets_FormClosing(object sender, FormClosingEventArgs e)
@@ -79,11 +81,12 @@ namespace Passiflora
 
             try
             {
-                if (ProdNames.SelectedItem != null && !Count.Text.Equals(""))
+                if (int.TryParse(Count.Text, out int count))
                 {
                     ord.SetSelectedProduct(ProdNames.SelectedItem.ToString());
-                    ord.SetSelectedProdCount(Convert.ToInt32(Count.Text));
+                    ord.SetSelectedProdCount(count);
                     ord.Show();
+                    Count.Text = "";
                 } 
                 else
                 {
