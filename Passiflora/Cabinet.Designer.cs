@@ -102,9 +102,9 @@
             this.UserOrdersAmount.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.UserOrdersAmount.Location = new System.Drawing.Point(11, 364);
             this.UserOrdersAmount.Name = "UserOrdersAmount";
-            this.UserOrdersAmount.Size = new System.Drawing.Size(226, 21);
+            this.UserOrdersAmount.Size = new System.Drawing.Size(230, 21);
             this.UserOrdersAmount.TabIndex = 44;
-            this.UserOrdersAmount.Text = "Сумма всех ваших заказов:";
+            this.UserOrdersAmount.Text = "Сумма всех ваших заказов: ";
             // 
             // Cabinet
             // 

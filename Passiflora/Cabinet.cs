@@ -26,9 +26,9 @@ namespace Passiflora
             DB.SearchValuesQuery(GetUserAmount);
             UserOrdersAmount.Text += DB.ds.Tables[0].Rows[0][0].ToString();
 
-            OrderData.DataSource = DB.SearchValuesQuery("execute GetOrdersByUsername " + "\'" + DB.AuthorizedUser + "\'");
+            string GetAllOrders = "select Номер_заказа, Товар, Тип_товара,Сумма_заказа, Адрес_доставки, Дата_заказа, Статус_заказа, Код_выдачи from GetAllUsersOrders where Логин_клиента = " + "\'" + DB.AuthorizedUser + "\'";
+            OrderData.DataSource = DB.SearchValuesQuery(GetAllOrders);
 
-            
         }
 
         private void BackLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
